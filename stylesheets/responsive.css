@@ -1,0 +1,471 @@
+/* High DPI screens and max-width 500px */
+@media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 500px) {
+  :root {
+    --font-md: 2.2rem;
+    --font-sm: 2rem;
+    --font-xsm: 1.8rem;
+  }
+
+  html {
+    font-size: 100%;
+  }
+
+  .es-investors-tile {
+    height: auto;
+    margin-left: 1.2rem;
+  }
+
+  .es-investors-tile__content {
+    margin-top: 1.2rem;
+  }
+
+  .es-nav__menu > img {
+    height: 4.6rem;
+  }
+
+  .es-nav__menu-ul_show {
+    width: 100%;
+    font-size: var(--font-lg);
+    padding: 0 3rem;
+  }
+
+  .es-nav__menu-ul > .es-nav__item:not(:first-child) {
+    margin: 3rem 0;
+  }
+
+  .es-callout_stocks {
+    max-height: 32rem;
+  }
+
+  .es-tabs__item {
+    font-size: var(--font-lg);
+  }
+
+  .es-tabs__menu {
+    padding: 0;
+  }
+
+  .es-tabs__pane_active.es-tabs__text-blocks,
+  .es-tabs__pane_active .es-tabs__text-blocks {
+    display: block;
+    margin: 0;
+  }
+
+  .es-tabs__text-blocks > div {
+    margin: 0;
+  }
+
+  .es-calc__btns {
+    margin: 4rem 0 0;
+    width: 100%;
+  }
+
+  .es-calc__btns > * {
+    margin: 0;
+  }
+
+  .es-contacts__content {
+    display: block;
+  }
+
+  .es-contacts__content > div {
+    margin: 2rem 0;
+  }
+
+  .es-ivestors-block__header {
+    height: auto;
+  }
+
+  .es-ivestors-block__middle {
+    height: auto;
+  }
+
+  .es-ivestors-block3__text {
+    font-size: 2rem;
+  }
+
+  .es-ivestors__callout {
+    height: 9rem;
+    margin: 0 0 4rem 4rem;
+  }
+
+  .es-stove__img_md {
+    height: 15rem;
+  }
+
+  .es-stove__img_sm {
+    height: 10rem;
+  }
+
+  .es-stove__img_lg {
+    height: 17rem;
+  }
+
+  .es-footer {
+    height: 45rem;
+  }
+
+  .es-footer__content {
+    display: block;
+  }
+
+  .es-footer__content > div:not(:first-child) {
+    margin-top: 2rem;
+  }
+}
+
+/* Max-width 619px */
+@media (max-width: 619px) {
+  .es-header {
+    font-size: 4rem;
+  }
+
+  .es-header__subtitle {
+    margin-top: -2.2rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .es-btn_investors-block1,
+  .es-tabs__menu {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .es-tabs__item {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+  .es-tabs__item:not(:last-child) {
+    border-bottom: 0.5px solid var(--gray);
+  }
+
+  .es-file {
+    align-items: flex-start;
+  }
+
+  .es-file__img {
+    margin-top: 0.8rem;
+  }
+
+  .es-ivestors-block1__text {
+    margin-bottom: 3rem;
+  }
+
+  .es-stove__img {
+    width: 28rem;
+  }
+
+  .es-stove__img_md {
+    height: 13rem;
+  }
+
+  .es-stove__img_sm {
+    height: 9rem;
+  }
+
+  .es-stove__img_lg {
+    height: 15rem;
+  }
+
+  .es-stove__img-container {
+    flex-direction: column;
+  }
+
+  .es-footer__content > div:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .es-calc__btn_profit {
+    margin-left: 0;
+  }
+}
+
+/* Max-width 919px */
+@media (max-width: 919px) {
+  .es-tabs__menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .es-tabs_border .es-tabs__item {
+    padding: 2rem;
+  }
+
+  .es-tabs__text:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .es-ivestors-block__content {
+    padding-bottom: 2rem;
+  }
+
+  .es-ivestors-block1__content {
+    padding: 20rem 2rem;
+  }
+
+  .es-ivestors__callout {
+    margin: -2rem 0 4rem 1rem;
+  }
+
+  .es-calc__container_full ~ .es-calc__btns {
+    margin-top: 4rem;
+  }
+
+  .es-calc__container {
+    flex-direction: column;
+  }
+
+  .es-popup__inputs {
+    flex-direction: column;
+  }
+
+  .es-contacts__content > div:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .es-ivestors-block__container {
+    flex-direction: column;
+  }
+
+  .es-ivestors-block__header {
+    display: flex;
+  }
+
+  .es-ivestors-block3__description {
+    margin: 1rem 0 0 1.4rem;
+  }
+
+  .es-ivestors-block3__number {
+    width: 7.7rem;
+    text-align: center;
+  }
+
+  .es-stove__img {
+    width: 32rem;
+    object-fit: cover;
+    object-position: left;
+  }
+}
+
+/* Max-width 1219px */
+@media (max-width: 1219px) {
+  .es-nav__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .es-nav__item_adaptive {
+    display: none;
+  }
+
+  .es-nav__item_popup {
+    margin-left: auto;
+  }
+
+  .es-tabs__item {
+    text-align: center;
+  }
+
+  .es-calc__tabs-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .es-calc__tabs-block > div {
+    margin: 0;
+  }
+
+  .es-calc__tabs-block .es-btn_short,
+  .es-calc__tabs-block .es-input-block_short {
+    width: auto;
+    max-width: 28rem;
+  }
+
+  .es-calc__btns {
+    order: 2;
+  }
+
+  .es-bottle__callout {
+    flex: 1 1 0;
+    height: 7rem;
+    margin-top: 10rem;
+  }
+}
+
+/* Min-width 620px */
+@media (min-width: 620px) {
+  .es-callout_stocks {
+    max-height: 22rem;
+    min-width: 50rem;
+  }
+
+  .es-tabs__menu {
+    padding: 4.7rem 2rem 4.4rem;
+  }
+
+  .es-calc__double-inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .es-calc__btns {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .es-footer__content {
+    display: flex;
+  }
+
+  .es-footer__content > div {
+    flex: 1 1 0;
+  }
+}
+
+/* Min-width 620px and max-width 1219px */
+@media (min-width: 620px) and (max-width: 1219px) {
+  .es-tabs_border .es-tabs__item:nth-child(1) {
+    border-bottom: 0.5px solid var(--gray);
+    border-right: 0.5px solid var(--gray);
+  }
+
+  .es-tabs_border .es-tabs__item:nth-child(2) {
+    border-bottom: 0.5px solid var(--gray);
+  }
+
+  .es-tabs_border .es-tabs__item:nth-child(3) {
+    border-right: 0.5px solid var(--gray);
+  }
+
+  .es-calc__double-inputs {
+    justify-content: flex-start;
+    margin: 0 -1rem;
+  }
+
+  .es-calc__double-inputs > div {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .es-calc__btns {
+    order: 2;
+    margin: 0 -1rem;
+  }
+
+  .es-calc__btns > * {
+    margin: 0 1rem;
+  }
+
+  .es-calc__result-inputs {
+    display: flex;
+    margin: 0 -1rem;
+  }
+
+  .es-calc__result-inputs > * {
+    margin: 0 1rem;
+  }
+}
+
+/* Min-width 920px */
+@media (min-width: 920px) {
+  .es-investors-tile {
+    height: 10rem;
+  }
+
+  .es-tabs__item {
+    margin: 0 4rem;
+  }
+
+  .es-tabs__item:first-child {
+    margin-left: 0;
+  }
+
+  .es-tabs__item:last-child {
+    margin-right: 0;
+  }
+
+  .es-tabs__pane_active.es-tabs__text-blocks,
+  .es-tabs__pane_active .es-tabs__text-blocks {
+    display: flex;
+    margin: 0 -2rem;
+  }
+
+  .es-tabs__text-blocks > div {
+    flex: 1 1 0;
+    margin: 0 2rem;
+  }
+
+  .es-ivestors-block__header {
+    height: 24rem;
+  }
+
+  .es-ivestors-block__middle {
+    height: 34rem;
+  }
+
+  .es-ivestors__callout {
+    height: 11rem;
+  }
+
+  .es-popup__inputs > div {
+    flex: 1 1 0;
+  }
+
+  .es-contacts__content {
+    display: flex;
+  }
+
+  .es-contacts__content > div {
+    flex: 1 1 0;
+    margin: 0 2rem;
+  }
+
+  .es-contacts__content > div:first-child {
+    margin-left: 0;
+  }
+
+  .es-contacts__content > div:last-child {
+    margin-right: 0;
+  }
+
+  .es-footer {
+    height: 24rem;
+  }
+}
+
+/* Min-width 1220px */
+@media (min-width: 1220px) {
+  .es-calc__container > div:first-child {
+    margin-right: 2rem;
+  }
+
+  .es-calc__container > div:last-child {
+    margin-left: 2rem;
+  }
+
+  .es-calc__double-inputs_full {
+    width: 58rem;
+  }
+
+  /* .es-calc__result {
+    margin-top: -32rem;
+    margin-bottom: 6rem;
+    width: 50%;
+  } */
+
+  .es-calc__result_full {
+    margin-top: -34rem;
+  }
+}
+
+@media (max-width: 619px),
+  (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 500px) {
+  .es-btn_investors-block1 {
+    width: 100%;
+  }
+}

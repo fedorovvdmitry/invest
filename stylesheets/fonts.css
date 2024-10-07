@@ -1,0 +1,35 @@
+@font-face {
+  font-family: TrumpSoftPro-Bold;
+  src: url('../fonts/TrumpSoftPro-Bold.otf');
+}
+
+@font-face {
+  font-family: UniNeue-Regular;
+  src: url('../fonts/UniNeueRegular.otf');
+}
+
+@font-face {
+  font-family: UniNeue-Bold;
+  src: url('../fonts/UniNeueBold.otf');
+}
+
+@font-face {
+  font-family: UniNeue-Light;
+  src: url('../fonts/UniNeueLight.otf');
+}
+
+:root {
+  --font-trumpsoftpro-bold: 'TrumpSoftPro-Bold';
+
+  --font-unineue-regular: 'UniNeue-Regular';
+  --font-unineue-bold: 'UniNeue-Bold';
+  --font-unineue-light: 'UniNeue-Light';
+
+  --font-xlg: 5rem;
+  --font-lg: 3.2rem;
+  --font-md: 2.2rem;
+  --font-sm: 1.6rem;
+  --font-xsm: 1.4rem;
+
+  --letter-spacing: 2px;
+}
