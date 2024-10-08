@@ -147,7 +147,7 @@ if (!self.__WB_pmw) {
       var o = (function () {
         'use strict'
         var t = {
-            mainURL: 'http://inform.uscapital.ru',
+            mainURL: 'https://inform.uscapital.ru',
             companyDirectory: '',
             wrapperItemsClass: '.document-widget_wrapper',
             itemBlockClass: '.document-widget_item',
