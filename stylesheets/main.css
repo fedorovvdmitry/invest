@@ -20,6 +20,8 @@ html {
 }
 
 body {
+  width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   font-size: var(--font-md);
 }

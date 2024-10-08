@@ -102,7 +102,7 @@
   }
 
   .es-footer {
-    height: 45rem;
+    /* height: 45rem; */
   }
 
   .es-footer__content {
@@ -433,9 +433,9 @@
     margin-right: 0;
   }
 
-  .es-footer {
+  /* .es-footer {
     height: 24rem;
-  }
+  } */
 }
 
 /* Min-width 1220px */
@@ -467,5 +467,26 @@
   (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 500px) {
   .es-btn_investors-block1 {
     width: 100%;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .es-nav__menu > img {
+    height: 2.4rem;
+  }
+
+  .es-nav__content {
+    padding: 1.7rem 1.5rem 1.4rem;
+  }
+
+  .es-btn {
+    font-size: var(--font-sm);
+    padding: 1rem 1.4rem 0.5rem;
+  }
+}
+
+@media (min-width: 920px) {
+  .es-investors-tile {
+    height: 10rem;
   }
 }
