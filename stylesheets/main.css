@@ -349,6 +349,15 @@ body {
 
 .es-tabs__menu {
   display: flex;
+  justify-content: space-between;
+}
+
+.es-ivestors-block3 .es-tabs__menu {
+  justify-content: flex-start;
+}
+
+.es-ivestors-block3 .es-tabs__menu .es-tabs__item {
+  margin: 0 4rem 0 0;
 }
 
 .es-tabs__item {
@@ -408,7 +417,8 @@ body {
 }
 
 .es-ivestors-block1,
-.es-ivestors-block3 {
+.es-ivestors-block3,
+.es-ivestors-block5 {
   background-position: center;
   background-size: cover;
 }
@@ -511,7 +521,8 @@ body {
 }
 
 /* INVESTORS BLOCK 3 */
-.es-ivestors-block3 {
+.es-ivestors-block3,
+.es-ivestors-block5 {
   background-image: url('../images/fon2.jpg');
 }
 

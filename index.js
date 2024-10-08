@@ -28,21 +28,45 @@ if (!self.__WB_pmw) {
   document.addEventListener('DOMContentLoaded', function (event) {
     var tabLinks = document.querySelectorAll('[data-role="tab/link"]')
 
+    function switchTab(tabLink) {
+      // Убираем активные классы с текущих табов и панелей
+      var activePane = document.querySelector('.es-tabs__pane_active')
+      var activeTab = document.querySelector('.es-tabs__item_active')
+
+      if (activePane) activePane.classList.remove('es-tabs__pane_active')
+      if (activeTab) activeTab.classList.remove('es-tabs__item_active')
+
+      // Добавляем активные классы новому табу и панели
+      var newPane = document.getElementById(tabLink.dataset.id)
+      if (newPane) {
+        newPane.classList.add('es-tabs__pane_active')
+      }
+      tabLink.classList.add('es-tabs__item_active')
+    }
+
     for (var index = 0; index < tabLinks.length; index++) {
       const tabLink = tabLinks[index]
-      tabLink.addEventListener('click', function () {
-        document
-          .querySelector('.es-tabs__pane_active')
-          .classList.remove('es-tabs__pane_active')
-        document
-          .querySelector('.es-tabs__item_active')
-          .classList.remove('es-tabs__item_active')
-        document
-          .getElementById(this.dataset.id)
-          .classList.add('es-tabs__pane_active')
-        this.classList.add('es-tabs__item_active')
+      tabLink.addEventListener('click', function (e) {
+        e.preventDefault() // Если используется ссылка, предотвратить переход
+        switchTab(tabLink)
       })
     }
+
+    // for (var index = 0; index < tabLinks.length; index++) {
+    //   const tabLink = tabLinks[index]
+    //   tabLink.addEventListener('click', function () {
+    //     document
+    //       .querySelector('.es-tabs__pane_active')
+    //       .classList.remove('es-tabs__pane_active')
+    //     document
+    //       .querySelector('.es-tabs__item_active')
+    //       .classList.remove('es-tabs__item_active')
+    //     document
+    //       .getElementById(this.dataset.id)
+    //       .classList.add('es-tabs__pane_active')
+    //     this.classList.add('es-tabs__item_active')
+    //   })
+    // }
 
     var investorPopup = document.getElementById('investors-popup')
     var investorBtn = document.getElementById('become-investor-btn')
@@ -64,7 +88,10 @@ if (!self.__WB_pmw) {
 
     if (presentationBtn) {
       presentationBtn.addEventListener('click', function () {
-        window.open('docs/presentation.pdf', '_blank')
+        window.open(
+          'https://sibstek.ru/files/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%B2.pdf',
+          '_blank'
+        )
       })
     }
 

@@ -377,9 +377,9 @@
     height: 10rem;
   }
 
-  .es-tabs__item {
+  /* .es-tabs__item {
     margin: 0 4rem;
-  }
+  } */
 
   .es-tabs__item:first-child {
     margin-left: 0;
