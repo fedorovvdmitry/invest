@@ -330,6 +330,7 @@ body {
   background-color: var(--orange);
 }
 .es-callout__white {
+  width: 60rem;
   color: white;
 }
 .es-callout_stocks {
