@@ -171,11 +171,11 @@ if (!self.__WB_pmw) {
           inputsElement.classList.add('es-disabled')
 
           console.log(
-            `https://web.archive.org/web/20220630101919/https://boomin.ru/api/calculate/min?token=${CALC_API_TOKEN}&pdate=${pdate}&sdate=${sdate}&size=${size}`
+            `https://boomin.ru/api/calculate/min?token=${CALC_API_TOKEN}&pdate=${pdate}&sdate=${sdate}&size=${size}`
           )
 
           httpGetAsync(
-            `https://web.archive.org/web/20220630101919/https://boomin.ru/api/calculate/min?token=${CALC_API_TOKEN}&pdate=${pdate}&sdate=${sdate}&size=${size}`,
+            `https://boomin.ru/api/calculate/min?token=${CALC_API_TOKEN}&pdate=${pdate}&sdate=${sdate}&size=${size}`,
             function (response) {
               const result = JSON.parse(response)
               if (result.error == '200') {
@@ -295,11 +295,11 @@ if (!self.__WB_pmw) {
           inputsElement.classList.add('es-disabled')
 
           console.log(
-            `https://web.archive.org/web/20220630101919/https://boomin.ru/api/calculate/full?token=${CALC_API_TOKEN_FULL}&duty=${duty}&pdate=${pdate}&pprice=${pprice}&sdate=${sdate}&sprice=${sprice}&volume=${volume}`
+            `https://boomin.ru/api/calculate/full?token=${CALC_API_TOKEN_FULL}&duty=${duty}&pdate=${pdate}&pprice=${pprice}&sdate=${sdate}&sprice=${sprice}&volume=${volume}`
           )
 
           httpGetAsync(
-            `https://web.archive.org/web/20220630101919/https://boomin.ru/api/calculate/full?token=${CALC_API_TOKEN_FULL}&duty=${duty}&pdate=${pdate}&pprice=${pprice}&sdate=${sdate}&sprice=${sprice}&volume=${volume}`,
+            `https://boomin.ru/api/calculate/full?token=${CALC_API_TOKEN_FULL}&duty=${duty}&pdate=${pdate}&pprice=${pprice}&sdate=${sdate}&sprice=${sprice}&volume=${volume}`,
             function (response) {
               const result = JSON.parse(response)
               console.log(result)
