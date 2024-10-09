@@ -936,10 +936,84 @@ ul {
   }
 }
 
-.es-ivestors-block6 .es-stats-tile__container img {
-  max-width: 50%;
-  height: auto;
-  object-fit: contain;
+.es-management-structure__diagram {
+  position: sticky;
+  top: 80px;
+}
+
+.es-management-structure__content {
+  display: flex;
+  gap: 40px;
+}
+
+.es-management-structure__title {
+  color: var(--blue);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.es-management-structure__sections {
+  width: 80%;
+  color: white;
+  font-family: var(--font-unineue-regular);
+  font-size: var(--font-sm);
+}
+
+.es-corporate-management__name {
+  color: var(--blue);
+  margin: 0;
+}
+
+.es-corporate-management__position {
+  margin: 0;
+}
+
+.es-corporate-management__description {
+  margin: 2rem 0 0;
+  max-width: 65%;
+}
+
+.es-corporate-management__president {
+  display: flex;
+  align-items: center;
+}
+
+.es-corporate-management__details,
+.es-corporate-management__member {
+  width: 80%;
+  color: white;
+  font-family: var(--font-unineue-regular);
+  font-size: var(--font-sm);
+}
+
+.es-corporate-management__photo {
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  background-position: top;
+  object-position: top;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-right: 5rem;
+}
+
+.es-corporate-management__board {
+  margin-top: 8rem;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.es-corporate-management__column {
+  flex: 1;
+}
+
+.es-corporate-management__member {
+  margin-bottom: 4rem;
+}
+
+.es-corporate-management__member .es-corporate-management__description {
+  max-width: 100%;
 }
 
 .es-ivestors-block6 .es-stats-tile__container {
@@ -955,12 +1029,12 @@ ul {
   margin-bottom: 2rem;
 }
 
-.es-ivestors-block6__subtitle {
+.es-corporate-management__text {
   color: white;
   font-family: var(--font-unineue-regular);
   font-size: var(--font-md);
   margin-top: -2.2rem;
-  margin-bottom: 2.2rem;
+  margin: 2.2rem 0;
 }
 
 .es-ivestors-block6 .es-tabs__menu .es-tabs__item {
