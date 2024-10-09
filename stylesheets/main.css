@@ -449,7 +449,7 @@ ul {
 
 @media (min-width: 620px) {
   .es-callout_stocks {
-    max-height: 22rem;
+    /* max-height: 22rem; */
     min-width: 50rem;
   }
 }
@@ -659,7 +659,8 @@ ul {
 
 .es-ivestors-block1,
 .es-ivestors-block3,
-.es-ivestors-block5 {
+.es-ivestors-block5,
+.es-ivestors-block6 {
   background-position: center;
   background-size: cover;
 }
@@ -935,9 +936,45 @@ ul {
   }
 }
 
+.es-ivestors-block6 .es-stats-tile__container img {
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+}
+
+.es-ivestors-block6 .es-stats-tile__container {
+  align-items: flex-start;
+}
+
+.es-ivestors-block6 a {
+  text-decoration: underline;
+  color: var(--blue);
+}
+
+.es-ivestors-block6 .es-callout__white {
+  margin-bottom: 2rem;
+}
+
+.es-ivestors-block6__subtitle {
+  color: white;
+  font-family: var(--font-unineue-regular);
+  font-size: var(--font-md);
+  margin-top: -2.2rem;
+  margin-bottom: 2.2rem;
+}
+
+.es-ivestors-block6 .es-tabs__menu .es-tabs__item {
+  margin: 0 4rem 0 0;
+}
+
+.es-ivestors-block6 .es-tabs__menu {
+  justify-content: flex-start;
+}
+
 /* INVESTORS BLOCK 3 */
 .es-ivestors-block3,
-.es-ivestors-block5 {
+.es-ivestors-block5,
+.es-ivestors-block6 {
   background-image: url('../images/fon2.jpg');
 }
 

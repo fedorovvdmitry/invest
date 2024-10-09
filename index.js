@@ -38,7 +38,7 @@ if (!self.__WB_pmw) {
     //   });
     // };
     var tabContainers = document.querySelectorAll(
-      '.es-ivestors-block3, .es-ivestors-block4'
+      '.es-ivestors-block3, .es-ivestors-block4, .es-ivestors-block6'
     )
 
     tabContainers.forEach(function (container) {
