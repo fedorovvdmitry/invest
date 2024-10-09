@@ -390,6 +390,48 @@ if (!self.__WB_pmw) {
     //     });
     //   }
     // };
+
+    const sections = document.querySelectorAll(
+      '#bonds, #profitability, #basic-information, #how-become-an-investor, #press-centr'
+    )
+    const navItems = document.querySelectorAll('.es-nav__item')
+
+    // Добавляем плавную прокрутку при клике на якорные ссылки
+    document.querySelectorAll('.es-nav__link').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const targetId = this.getAttribute('href').substring(1)
+        const targetElement = document.getElementById(targetId)
+
+        window.scrollTo({
+          top: targetElement.offsetTop - 99, // Учитываем отступ
+          behavior: 'smooth' // Плавная прокрутка
+        })
+      })
+    })
+
+    // Функция для добавления активного класса к текущему пункту меню
+    window.addEventListener('scroll', function () {
+      let currentSection = ''
+
+      // Проверяем, какая секция на экране
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 99 // Учитываем фиксированное меню
+        if (pageYOffset >= sectionTop) {
+          currentSection = section.getAttribute('id')
+        }
+      })
+
+      // Удаляем активный класс у всех пунктов меню и добавляем к текущему
+      navItems.forEach((item) => {
+        item.classList.remove('es-nav__item_active')
+        const link = item.querySelector('a')
+        if (link && link.getAttribute('href') === `#${currentSection}`) {
+          item.classList.add('es-nav__item_active')
+        }
+      })
+    })
   })
 
   function sendEmail(form) {
