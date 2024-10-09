@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: TrumpSoftPro-Regular;
+  src: url('../fonts/TrumpSoftPro-Regular.ttf');
+}
+
+@font-face {
   font-family: UniNeue-Regular;
   src: url('../fonts/UniNeueRegular.otf');
 }

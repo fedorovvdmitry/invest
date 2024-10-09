@@ -64,7 +64,7 @@ ul {
 
 .es-page__header {
   padding-top: 30rem;
-  background-image: url('https://web.archive.org/web/20220630101919im_/https://invest.sibstek.ru/images/page-header.jpg');
+  background-image: url('https://invest.sibstek.ru/images/page-header.jpg');
 }
 
 /* BUTTONS */
@@ -247,6 +247,7 @@ ul {
 .es-stats-tile__container {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 4rem;
 }
 
 /* INVESTORS TILE */
