@@ -1257,7 +1257,7 @@ ul {
   height: 100vh;
   z-index: 1030;
   opacity: 0;
-  transition: opacity 0.4s;
+  /* transition: opacity 0.4s; */
   will-change: opacity;
 }
 .es-popup_show {
