@@ -1,40 +1,3 @@
-/* FONTS */
-/* @font-face {
-  font-family: TrumpSoftPro-Bold;
-  src: url('/fonts/TrumpSoftPro-Bold.otf');
-}
-
-@font-face {
-  font-family: UniNeue-Regular;
-  src: url('/fonts/UniNeueRegular.otf');
-}
-
-@font-face {
-  font-family: UniNeue-Bold;
-  src: url('/fonts/UniNeueBold.otf');
-}
-
-@font-face {
-  font-family: UniNeue-Light;
-  src: url('/fonts/UniNeueLight.otf');
-}
-
-:root {
-  --font-trumpsoftpro-bold: 'TrumpSoftPro-Bold';
-
-  --font-unineue-regular: 'UniNeue-Regular';
-  --font-unineue-bold: 'UniNeue-Bold';
-  --font-unineue-light: 'UniNeue-Light';
-
-  --font-xlg: 5rem;
-  --font-lg: 3.2rem;
-  --font-md: 2.2rem;
-  --font-sm: 1.6rem;
-  --font-xsm: 1.4rem;
-
-  --letter-spacing: 3px;
-} */
-
 @media (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 500px) {
   :root {
     --font-md: 2.2rem;
@@ -504,6 +467,11 @@ ul {
 
 .es-tabs__menu {
   display: flex;
+  justify-content: space-between;
+}
+
+.es-ivestors-block3 .es-tabs__menu {
+  justify-content: flex-start;
 }
 
 @media (min-width: 620px) {
@@ -577,6 +545,10 @@ ul {
   letter-spacing: var(--letter-spacing);
 }
 
+.es-ivestors-block3 .es-tabs__menu .es-tabs__item {
+  margin: 0 4rem 0 0;
+}
+
 @media (max-width: 1219px) {
   .es-tabs__item {
     text-align: center;
@@ -584,9 +556,9 @@ ul {
 }
 
 @media (min-width: 920px) {
-  .es-tabs__item {
+  /* .es-tabs__item {
     margin: 0 4rem;
-  }
+  } */
   .es-tabs__item:first-child {
     margin-left: 0;
   }
