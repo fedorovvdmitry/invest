@@ -35,7 +35,7 @@ html {
 
 body {
   margin: 0;
-  -webkit-font-smoothing: antialiased;
+  /* -webkit-font-smoothing: antialiased; */
   font-size: var(--font-md);
 }
 
@@ -216,7 +216,6 @@ ul {
 }
 
 .es-stats-tile__value {
-  height: 5.8rem;
   color: white;
   font-size: 4rem;
   font-family: var(--font-trumpsoftpro-bold);
@@ -233,7 +232,7 @@ ul {
   font-family: var(--font-unineue-bold);
   font-size: 2.2rem;
   text-align: center;
-  margin: -1.2rem 0 1rem;
+  margin: 0 0 1rem;
   line-height: 1;
 }
 
