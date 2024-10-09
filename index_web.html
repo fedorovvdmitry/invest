@@ -12,47 +12,44 @@
     <header class="es-nav">
       <nav class="es-page__content es-nav__content">
         <li class="es-nav__item es-nav__item_adaptive es-nav__item_active">
-          <a class="es-nav__link">Инвесторам</a>
+          <a class="es-nav__link" style="visibility: hidden">Инвесторам</a>
         </li>
         <li class="es-nav__item es-nav__item_adaptive">
-          <a class="es-nav__link">Облигации</a>
+          <a class="es-nav__link" style="visibility: hidden">Облигации</a>
         </li>
         <li class="es-nav__item es-nav__item_adaptive">
-          <a class="es-nav__link">Доходность</a>
+          <a class="es-nav__link" style="visibility: hidden">Доходность</a>
         </li>
-        <!-- <li class="es-nav__item es-nav__item_adaptive">
-          <a class="es-nav__link">Основные сведения</a>
-        </li> -->
+
         <li class="es-nav__item es-nav__item_adaptive">
-          <a class="es-nav__link">Ключевые показатели</a>
+          <a class="es-nav__link" style="visibility: hidden"
+            >Ключевые показатели</a
+          >
         </li>
+
         <li class="es-nav__item es-nav__item_adaptive">
-          <a class="es-nav__link">Как стать инвестором</a>
-        </li>
-        <!-- <li class="es-nav__item es-nav__item_adaptive">
-          <a class="es-nav__link">Пресс-центр</a>
-        </li> -->
-        <li class="es-nav__item es-nav__item_adaptive">
-          <a class="es-nav__link">Контакты</a>
+          <a class="es-nav__link" style="visibility: hidden">Контакты</a>
         </li>
 
         <div class="es-nav__menu">
           <img src="images/menu.png" alt="Меню" id="collapsable-menu-btn" />
           <ul class="es-nav__menu-ul" id="collapsable-menu">
             <li class="es-nav__item es-nav__item_active">
-              <a class="es-nav__link">Инвесторам</a>
+              <a class="es-nav__link" style="visibility: hidden">Инвесторам</a>
             </li>
             <li class="es-nav__item">
-              <a class="es-nav__link">Облигации</a>
+              <a class="es-nav__link" style="visibility: hidden">Облигации</a>
             </li>
             <li class="es-nav__item">
-              <a class="es-nav__link">Доходность</a>
+              <a class="es-nav__link" style="visibility: hidden">Доходность</a>
             </li>
             <li class="es-nav__item">
-              <a class="es-nav__link">Ключевые показатели</a>
+              <a class="es-nav__link" style="visibility: hidden"
+                >Ключевые показатели</a
+              >
             </li>
             <li class="es-nav__item">
-              <a class="es-nav__link">Контакты</a>
+              <a class="es-nav__link" style="visibility: hidden">Контакты</a>
             </li>
           </ul>
         </div>
@@ -69,22 +66,12 @@
         <div class="es-page__content es-ivestors-block1__content">
           <div class="es-ivestors-block1__title">ООО «Сибстекло»</div>
           <div class="es-ivestors-block1__text">
-            Крупнейший производитель тарного стекла за Уралом. Компания
-            специализируется на изготовлении бесцветной и цветной стеклотары,
-            всего освоено более 120 видов продукции.
-          </div>
-          <div class="es-ivestors-block1__text">
-            Кредитный рейтинг: ВВ-(RU) со «стабильным» прогнозом от рейтингового
-            агентства АКРА.
+            Крупнейший в Сибири производитель стеклянной тары, лидер рынка
+            Сибирского и Дальневосточного федеральных округов.
           </div>
           <button id="presentation-btn" class="es-btn es-btn_investors-block1">
             Презентация для инвесторов
           </button>
-          <div class="es-ivestors-block1__text">
-            <a href="https://www.e-disclosure.ru/portal/company.aspx?id=37458"
-              >Адрес раскрытия информации</a
-            >
-          </div>
         </div>
       </section>
       <section class="es-ivestors-block2">
@@ -93,8 +80,10 @@
           <div class="es-calc__container">
             <div>
               <div class="es-calc__text">
-                Вы можете рассчитать прибыль от своих инвестиций, указав
-                планируемую сумму и дату покупки в нашем калькуляторе.
+                Доходность от облигаций ООО «Сибстекло» составляет 12,5%
+                годовых. Вы можете точно рассчитать прибыль своих инвестиций,
+                указав планируемую сумму и дату покупки в нашем калькуляторе
+                доходности.
               </div>
             </div>
             <div id="calc-inputs">
@@ -108,7 +97,7 @@
                 />
               </div>
               <div class="es-input-block">
-                <label class="es-input-block__title">Количество бумаг</label>
+                <label class="es-input-block__title">Сумма инвестиций</label>
                 <input
                   class="es-input es-input_blue"
                   data-role="price/input"
@@ -170,277 +159,84 @@
       <section class="es-ivestors-block3">
         <div class="es-page__content es-tabs__content">
           <h2 class="es-header es-header_blue">Параметры выпуска</h2>
-          <div class="es-tabs es-tabs_border">
-            <ul class="es-page__content es-tabs__menu">
-              <li
-                class="es-tabs__item es-tabs__item_active"
-                data-role="tab/link"
-                data-id="first-issue"
-              >
-                Первый выпуск
-              </li>
-              <li
-                class="es-tabs__item"
-                data-role="tab/link"
-                data-id="second-issue"
-              >
-                Второй выпуск
-              </li>
-              <li
-                class="es-tabs__item"
-                data-role="tab/link"
-                data-id="third-issue"
-              >
-                Третий выпуск
-              </li>
-            </ul>
-            <div class="es-page__content es-tabs__content">
-              <div
-                class="es-tabs__pane es-tabs__pane_active"
-                data-role="tab/content"
-                id="first-issue"
-              >
-                <div class="es-stats-tile__container">
-                  <div class="es-header__subtitle">
-                    Наименование выпуска: Сибстекло-БО-ПО2
-                    <br />Номер выпуска: №4B02-02-00373-R-001P от 23.09.2020
-                    <br />ISIN код: RU000A1026R9 <br /><br />Итоги освоения:
-                    Компания пополнила оборотные средства,<br />благодаря чему,
-                    в том числе, запустила новую стекловаренную печь №5.
-                  </div>
-                  <div class="es-stats-tile__container">
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">125</div>
-                      <div class="es-stats-tile__subtitle">млн рублей</div>
-                      <div class="es-stats-tile__text">Объём выпуска</div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">
-                        12,5<span class="es-stats-tile__value-letter">%</span>
-                      </div>
-                      <div class="es-stats-tile__subtitle">годовых</div>
-                      <div class="es-stats-tile__text">Купонная ставка</div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">1 800</div>
-                      <div class="es-stats-tile__subtitle">дней</div>
-                      <div class="es-stats-tile__text">Срок обращения</div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">10 000</div>
-                      <div class="es-stats-tile__subtitle">рублей</div>
-                      <div class="es-stats-tile__text">
-                        Номинал одной облигации
-                      </div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">30</div>
-                      <div class="es-stats-tile__subtitle">дней</div>
-                      <div class="es-stats-tile__text">
-                        Длительность купонного периода
-                      </div>
-                    </div>
-                    <div class="es-callout es-callout_stocks">
-                      <div class="es-callout__white">
-                        Амортизация: 5% с 41 по 60 купонный период.
-                        <br />
-                        Call-опцион: в даты окончания 18, 30, 42 купонного
-                        периода <br />по усмотрению эмитента
-                      </div>
-                      <div class="es-callout__white">
-                        <br />«Юниcервис Капитал»<br />
-                        ООО «ЮЛКМ»
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <br />
+          <div class="es-header__subtitle">
+            Номер выпуска: №4B02-02-00373-R-001P от 23.09.2020<br />ISIN код:
+            RU000A1026R9
+          </div>
+          <div class="es-stats-tile__container">
+            <div class="es-stats-tile">
+              <img src="images/stocks/ico_001.png" class="es-stats-tile__ico" />
+              <div class="es-stats-tile__value">750</div>
+              <div class="es-stats-tile__subtitle">млн рублей</div>
+              <div class="es-stats-tile__text">Объём программы</div>
+            </div>
+            <div class="es-stats-tile">
+              <img src="images/stocks/ico_001.png" class="es-stats-tile__ico" />
+              <div class="es-stats-tile__value">125</div>
+              <div class="es-stats-tile__subtitle">млн рублей</div>
+              <div class="es-stats-tile__text">Сумма первого выпуска</div>
+            </div>
+            <div class="es-stats-tile">
+              <img src="images/stocks/ico_001.png" class="es-stats-tile__ico" />
+              <div class="es-stats-tile__value">12500</div>
+              <div class="es-stats-tile__subtitle">штук</div>
+              <div class="es-stats-tile__text">
+                Количество облигаций выпуска
               </div>
-              <div
-                class="es-tabs__pane"
-                data-role="tab/content"
-                id="second-issue"
-              >
-                <div class="es-stats-tile__container">
-                  <div class="es-header__subtitle">
-                    Наименование выпуска: Сибстекло-БО-ПО3
-                    <br />Номер выпуска: №4B02-03-00373-R-001 от 18.10.2022
-                    <br />ISIN код: RU000A105C93 <br /><br />Итоги освоения:
-                    Половину средств компания направила на увеличение запасов
-                    сырья и готовой продукции. Вторую часть эмитент использовал
-                    для замещения выбывающего по плану кредитного портфеля.
-                  </div>
-                  <div class="es-stats-tile__container">
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">300</div>
-                      <div class="es-stats-tile__subtitle">млн рублей</div>
-                      <div class="es-stats-tile__text">Объём выпуска</div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">
-                        17<span class="es-stats-tile__value-letter">%</span>
-                      </div>
-                      <div class="es-stats-tile__subtitle">годовых</div>
-                      <div class="es-stats-tile__text">Купонная ставка</div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">1 080</div>
-                      <div class="es-stats-tile__subtitle">дней</div>
-                      <div class="es-stats-tile__text">Срок обращения</div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">10 000</div>
-                      <div class="es-stats-tile__subtitle">рублей</div>
-                      <div class="es-stats-tile__text">
-                        Номинал одной облигации
-                      </div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">30</div>
-                      <div class="es-stats-tile__subtitle">дней</div>
-                      <div class="es-stats-tile__text">
-                        Длительность купонного периода
-                      </div>
-                    </div>
-                    <div class="es-callout es-callout_stocks">
-                      <div class="es-callout__white">
-                        Амортизация: по 50% в даты окночания 35 и 36 к.п.
-                        <br />Оферта: Полная безотзывная оферта в дату окончания
-                        25 купонного периода. Ранее были успешно реализованы
-                        добровольные оферты в 3, 6, 9, 12 купонных
-                        периодах и безотзывная в 15 купонном периоде.
-                      </div>
-                      <div class="es-callout__white">
-                        <br />«Юниcервис Капитал»<br />
-                        ООО «ЮЛКМ»
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <div class="es-stats-tile">
+              <img src="images/stocks/ico_001.png" class="es-stats-tile__ico" />
+              <div class="es-stats-tile__value">10 000</div>
+              <div class="es-stats-tile__subtitle">рублей</div>
+              <div class="es-stats-tile__text">Номинал одной облигации</div>
+            </div>
+            <div class="es-stats-tile">
+              <img src="images/stocks/ico_001.png" class="es-stats-tile__ico" />
+              <div class="es-stats-tile__value">1 800</div>
+              <div class="es-stats-tile__subtitle">дней</div>
+              <div class="es-stats-tile__text">Срок обращения</div>
+            </div>
+            <div class="es-stats-tile">
+              <img src="images/stocks/ico_001.png" class="es-stats-tile__ico" />
+              <div class="es-stats-tile__value"></div>
+              <div class="es-stats-tile__subtitle">открытая подписка</div>
+              <div class="es-stats-tile__text">Способ размещения</div>
+            </div>
+            <div class="es-stats-tile">
+              <img src="images/stocks/ico_001.png" class="es-stats-tile__ico" />
+              <div class="es-stats-tile__value">
+                12,5<span class="es-stats-tile__value-letter">%</span>
               </div>
-              <div
-                class="es-tabs__pane"
-                data-role="tab/content"
-                id="third-issue"
-              >
-                <div class="es-stats-tile__container">
-                  <div class="es-header__subtitle">
-                    Наименование выпуска: Сибстекло-БО-П04
-                    <br />Номер выпуска: №4B02-04-00373-R-001P от 13.10.2023
-                    <br />ISIN код: RU000A107209 <br /><br />Итоги освоения:
-                    Инвестиции были направлены, в том числе, на пополнение
-                    оборотного капитала, чтобы осуществить текущий ремонт
-                    и обслуживание оборудования для дальнейшего увеличения
-                    выпуска продукции. Также с помощью привлеченных средств
-                    аккумулировали запасы сырья для бесперебойного снабжения
-                    стекольных комплексов и сформировали резервы стеклотары.
-                  </div>
-                  <div class="es-stats-tile__container">
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">125</div>
-                      <div class="es-stats-tile__subtitle">млн рублей</div>
-                      <div class="es-stats-tile__text">Объём выпуска</div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">
-                        12,5<span class="es-stats-tile__value-letter">%</span>
-                      </div>
-                      <div class="es-stats-tile__subtitle">годовых</div>
-                      <div class="es-stats-tile__text">Купонная ставка</div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">1 800</div>
-                      <div class="es-stats-tile__subtitle">дней</div>
-                      <div class="es-stats-tile__text">Срок обращения</div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">10 000</div>
-                      <div class="es-stats-tile__subtitle">рублей</div>
-                      <div class="es-stats-tile__text">
-                        Номинал одной облигации
-                      </div>
-                    </div>
-                    <div class="es-stats-tile">
-                      <img
-                        src="images/stocks/ico_001.png"
-                        class="es-stats-tile__ico"
-                      />
-                      <div class="es-stats-tile__value">30</div>
-                      <div class="es-stats-tile__subtitle">дней</div>
-                      <div class="es-stats-tile__text">
-                        Длительность купонного периода
-                      </div>
-                    </div>
-                    <div class="es-callout es-callout_stocks">
-                      <div class="es-callout__white">
-                        Амортизация: по 50% в даты окончания 47 и 48 к.п.
-                        <br />Оферта: Полная безотзывная оферта в дату окончания
-                        18 к.п.
-                      </div>
-                      <div class="es-callout__white">
-                        <br />Организатор: ООО «Инвестиционная компания
-                        Юнисервис Капитал» <br />Андеррайтер: ООО
-                        «Инвестиционная компания Юнисервис Капитал» <br />ПВО:
-                        ООО «ЮЛКМ»
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="es-stats-tile__subtitle">годовых</div>
+              <div class="es-stats-tile__text">Купонная ставка</div>
+            </div>
+            <div class="es-stats-tile">
+              <img src="images/stocks/ico_001.png" class="es-stats-tile__ico" />
+              <div class="es-stats-tile__value">
+                100<span class="es-stats-tile__value-letter">%</span>
+              </div>
+              <div class="es-stats-tile__subtitle">от номинала</div>
+              <div class="es-stats-tile__text">Цена размещения</div>
+            </div>
+            <div class="es-stats-tile">
+              <img src="images/stocks/ico_001.png" class="es-stats-tile__ico" />
+              <div class="es-stats-tile__value">30</div>
+              <div class="es-stats-tile__subtitle">дней</div>
+              <div class="es-stats-tile__text">
+                Длительность купонного периода
+              </div>
+            </div>
+            <div class="es-callout es-callout_stocks">
+              <div class="es-callout__white">
+                Амортизация: 5% с 41 по 60 купонный период. Установлена
+                возможность досрочного погашения по усмотрению эмитента в дату
+                окончания 18, 30 и 42 купонного периода.
+              </div>
+              <div class="es-callout__white">
+                Привлеченные инвестиции направляются на запуск стекловаренной
+                печи, что позволит увеличить общую производительность
+                предприятия до 735 тонн стекломассы в сутки.
               </div>
             </div>
           </div>
@@ -466,9 +262,6 @@
               <li class="es-tabs__item" data-role="tab/link" data-id="tab4">
                 Бухгалтерская отчётность
               </li>
-              <li class="es-tabs__item" data-role="tab/link" data-id="tab5">
-                Разбор отчетности
-              </li>
             </ul>
           </div>
           <div class="es-page__content es-tabs__content">
@@ -483,7 +276,7 @@
                     Полное наименование компании
                   </div>
                   <div class="es-ivestors-block4__subtitle">
-                    Общество с ограниченной ответственностью «Сибирское стекло»
+                    Общество с ограниченной ответственностью "Сибирское стекло"
                   </div>
                 </div>
                 <div class="es-ivestors-block4__text">
@@ -491,25 +284,25 @@
                     Сокращенное наименование компании
                   </div>
                   <div class="es-ivestors-block4__subtitle">
-                    ООО «Сибстекло»
+                    ООО "Сибстекло"
                   </div>
                 </div>
                 <div class="es-ivestors-block4__text">
-                  <div class="es-ivestors-block4__title">Юридический арес</div>
+                  <div class="es-ivestors-block4__title">Место нахождения</div>
                   <div class="es-ivestors-block4__subtitle">
                     630047, Новосибирская область, город Новосибирск, улица
-                    Даргомыжского, 8А/1, помещ. 1
+                    Даргомыжского, 8А
                   </div>
                 </div>
                 <div class="es-ivestors-block4__text">
-                  <div class="es-ivestors-block4__title">Фактический адрес</div>
+                  <div class="es-ivestors-block4__title">
+                    Адрес (почтовый адрес)
+                  </div>
                   <div class="es-ivestors-block4__subtitle">
                     630047, Новосибирская область, город Новосибирск, улица
-                    Даргомыжского, 8А/1, помещ. 1
+                    Даргомыжского, 8А
                   </div>
                 </div>
-              </div>
-              <div>
                 <div class="es-ivestors-block4__text">
                   <div class="es-ivestors-block4__title">
                     Дата государственной регистрации
@@ -537,11 +330,11 @@
                 </div>
                 <div class="es-ivestors-block4__text">
                   <div class="es-ivestors-block4__title">ФИО руководителя</div>
-                  <div class="es-ivestors-block4__subtitle">
-                    Мор Антон Павлович
-                  </div>
+                  <div class="es-ivestors-block4__subtitle">Мор Антон</div>
                 </div>
-                <!--<div class="es-ivestors-block4__text">
+              </div>
+              <div>
+                <div class="es-ivestors-block4__text">
                   <div class="es-ivestors-block4__title">
                     Банковские реквизиты
                   </div>
@@ -558,6 +351,14 @@
                 </div>
                 <div class="es-ivestors-block4__text">
                   <div class="es-ivestors-block4__title">
+                    Зарегистрировавший орган
+                  </div>
+                  <div class="es-ivestors-block4__subtitle">
+                    ИФНС по Центральному району г. Новосибирска
+                  </div>
+                </div>
+                <div class="es-ivestors-block4__text">
+                  <div class="es-ivestors-block4__title">
                     Наименование управляющей организации
                   </div>
                   <div class="es-ivestors-block4__subtitle">
@@ -569,7 +370,9 @@
                     Телефон руководителя
                   </div>
                   <div class="es-ivestors-block4__subtitle">
-                    <a href="tel:+73833633770" class="es-link"
+                    <a
+                      href="https://web.archive.org/web/20220630101857/tel:+73833633770"
+                      class="es-link"
                       >+7 (383) 363-37-70</a
                     >
                   </div>
@@ -580,12 +383,12 @@
                   </div>
                   <div class="es-ivestors-block4__subtitle">
                     <a
-                      href="http://www.e-disclosure.ru/portal/company.aspx?id=37458"
+                      href="https://web.archive.org/web/20220630101857/http://www.e-disclosure.ru/portal/company.aspx?id=37458"
                       class="es-link"
                       >http://www.e-disclosure.ru/portal/company.aspx?id=37458</a
                     >
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
             <div class="es-tabs__pane" data-role="tab/content" id="tab2">
@@ -651,31 +454,10 @@
                 </div>
               </div>
             </div>
-            <div class="es-tabs__pane" data-role="tab/content" id="tab5">
-              <div class="document-widget_block">
-                <div
-                  class="document-widget_wrapper"
-                  data-document_type="buh_otczetnost"
-                >
-                  <div class="es-file document-widget_item">
-                    <img src="images/pdf.png" class="es-file__img" />
-                    <div class="es-file__text">
-                      <span class="es-file__title" data-param="ORIGIN"></span>
-                      <a
-                        target="_blank"
-                        href="index.html"
-                        class="es-link-blue es-file__link"
-                        >Скачать .pdf</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
-      <section class="es-ivestors-block5">
+      <section class="es-ivestors-block3">
         <div class="es-page__content es-ivestors-block__content">
           <h2 class="es-header">
             <span class="es-header__letter">К</span>ак стать инвестором
@@ -687,9 +469,9 @@
                 <div class="es-ivestors-block3__description">
                   <div class="es-ivestors-block3__title">Открыть</div>
                   <div class="es-ivestors-block3__subtitle">
-                    Брокерский счёт:
+                    Брокерский счёт
                   </div>
-                  <!-- <div class="es-ivestors-block3__text">Способы открытия:</div> -->
+                  <div class="es-ivestors-block3__text">Способы открытия:</div>
                 </div>
               </div>
               <div class="es-ivestors-block__middle">
@@ -728,14 +510,16 @@
                 <div class="es-ivestors-block3__number">2</div>
                 <div class="es-ivestors-block3__description">
                   <div class="es-ivestors-block3__title">Приобрести</div>
-                  <div class="es-ivestors-block3__subtitle">Облигации</div>
-                  <!-- <div class="es-ivestors-block3__subtitle">
+                  <div class="es-ivestors-block3__subtitle">
+                    Облигации ООО «Сибстекло»
+                  </div>
+                  <div class="es-ivestors-block3__subtitle">
                     по номеру: №4B02-02-00373-R-001P от 23.09.2020
                   </div>
                   <div class="es-ivestors-block3__subtitle">
                     ISIN код: RU000A1026R9
                   </div>
-                  <div class="es-ivestors-block3__text">с помощью:</div> -->
+                  <div class="es-ivestors-block3__text">с помощью:</div>
                 </div>
               </div>
               <div class="es-ivestors-block__middle">
@@ -770,7 +554,7 @@
                 <div class="es-investors-tile">
                   <div class="es-investors-tile__img">
                     <img
-                      src="images/investors/ico_05.png"
+                      src="https://web.archive.org/web/20220630101857im_/https://invest.sibstek.ru/images/investors/ico_05.png"
                       alt="Личный кабинет"
                     />
                   </div>
@@ -815,9 +599,9 @@
                     <div class="es-investors-tile__text">Ежемесячно</div>
                   </div>
                 </div>
-                <!-- <div class="es-investors-tile">
+                <div class="es-investors-tile">
                   <div class="es-investors-tile__img">
-                    <img src="images/ico_07.png" alt="Ставка" />
+                    <img src="images/investors/ico_07.png" alt="Ставка" />
                   </div>
                   <div class="es-investors-tile__content">
                     <div class="es-investors-tile__title">Ставка 12,5%</div>
@@ -826,13 +610,13 @@
                 </div>
                 <div class="es-investors-tile">
                   <div class="es-investors-tile__img">
-                    <img src="images/ico_08.png" alt="Оферта" />
+                    <img src="images/investors/ico_08.png" alt="Оферта" />
                   </div>
                   <div class="es-investors-tile__content">
                     <div class="es-investors-tile__title">Оферта</div>
                     <div class="es-investors-tile__text">Не предусмотрена</div>
                   </div>
-                </div> -->
+                </div>
               </div>
               <div class="es-callout es-ivestors__callout">
                 По вопросам покупки биржевых облигаций ООО «Сибстекло» вы можете
@@ -843,74 +627,21 @@
           </div>
         </div>
       </section>
-      <section class="es-ivestors-block2">
-        <div class="es-page__content es-news__content">
-          <h2 class="es-header es-header_blue">Пресс-центр</h2>
-          <div class="es-news-block__container">
-            <div class="es-news-tile">
-              <img
-                class="es-news-tile__img"
-                src="images/news_cover.png"
-                alt=""
-              />
-              <div class="es-news-tile__title">
-                В первом полугодии «Сибстекло» обновило исторический максимум
-                EBITDA Adj LTM
-              </div>
-              <div class="es-news-tile__text">
-                По итогам 6 месяцев 2024 года EBITDA Adj LTM эмитента выросла на
-                22,6%. При этом чистая прибыль сократилась на 35 млн руб.
-                Подробнее о причинах разнонаправленной динамики — в
-                аналитическом обзоре.
-              </div>
-            </div>
-            <div class="es-news-tile">
-              <img
-                class="es-news-tile__img"
-                src="images/news_cover.png"
-                alt=""
-              />
-              <div class="es-news-tile__title">
-                В первом полугодии «Сибстекло» обновило исторический максимум
-                EBITDA Adj LTM
-              </div>
-              <div class="es-news-tile__text">
-                По итогам 6 месяцев 2024 года EBITDA Adj LTM эмитента выросла на
-                22,6%. При этом чистая прибыль сократилась на 35 млн руб.
-                Подробнее о причинах разнонаправленной динамики — в
-                аналитическом обзоре.
-              </div>
-            </div>
-            <div class="es-news-tile">
-              <img
-                class="es-news-tile__img"
-                src="images/news_cover.png"
-                alt=""
-              />
-              <div class="es-news-tile__title">
-                В первом полугодии «Сибстекло» обновило исторический максимум
-                EBITDA Adj LTM
-              </div>
-              <div class="es-news-tile__text">
-                По итогам 6 месяцев 2024 года EBITDA Adj LTM эмитента выросла на
-                22,6%. При этом чистая прибыль сократилась на 35 млн руб.
-                Подробнее о причинах разнонаправленной динамики — в
-                аналитическом обзоре.
-              </div>
-            </div>
-          </div>
-          <button class="es-btn es-btn_short" id="calc-light-btn" tabindex="5">
-            Все новости
-          </button>
-        </div>
-      </section>
     </div>
     <footer class="es-footer">
       <div class="es-page__content es-footer__content">
         <div>
+          <div class="es-page__footer-title">
+            <a
+              href="https://web.archive.org/web/20220630101857/http://www.e-disclosure.ru/portal/company.aspx?id=37458"
+              >Адрес раскрытия информации</a
+            >
+          </div>
           <div class="es-page__footer-text">
-            <div>ООО «Систекло»</div>
-            <div>630047, г. Новосбирск, ул. Даргомыжского, 8а/1</div>
+            <div>ООО "Систекло"</div>
+            <div>Адрес:</div>
+            <div>РФ, 630047, г. Новосбирск,</div>
+            <div>ул. Даргомыжского, 8а</div>
           </div>
         </div>
         <div>
@@ -918,18 +649,27 @@
             По вопросам приобретения облигаций
           </div>
           <div class="es-page__footer-text">
-            <div>ООО «Инвестиционная компания Юниcервис Капитал»</div>
-            <div>630099, г. Новосибирск, ул. Романова, 28, 5 этаж»</div>
+            <div>ООО «Юнисервис Капитал»</div>
             <div>
-              <a href="tel:+73833495776" class="es-link">+7 (383) 349-57-76</a>
+              <a
+                href="https://web.archive.org/web/20220630101857/http://uscapital.ru/"
+                class="es-link"
+                >uscapital.ru</a
+              >
             </div>
             <div>
-              <a href="mailto:Info@uscapital.ru" class="es-link"
+              <a
+                href="https://web.archive.org/web/20220630101857/mailto:Info@uscapital.ru"
+                class="es-link"
                 >Info@uscapital.ru</a
               >
             </div>
             <div>
-              <a href="http://uscapital.ru/" class="es-link">uscapital.ru</a>
+              <a
+                href="https://web.archive.org/web/20220630101857/tel:+73833495776"
+                class="es-link"
+                >+7 (383) 349-57-76</a
+              >
             </div>
             <!--    <div>
             <a href="tel:88003013831" class="es-link">8 (800) 301-38-31 (бесплатная линия для инвесторов)</a>
@@ -1097,11 +837,31 @@
     <script src="ui/1.12.1/jquery-ui.js"></script>
     <!-- mask -->
     <script src="imask"></script>
-    <!-- recaptcha
-    <script src="recaptcha/api.js@render=6LdLRnoUAAAAADtEY6uckKKn04dqZDCNnpcwoseK"></script> -->
+    <!-- recaptcha -->
+    <script src="recaptcha/api.js@render=6LdLRnoUAAAAADtEY6uckKKn04dqZDCNnpcwoseK"></script>
     <!-- docs widget -->
     <script src="widget.js"></script>
     <!-- theme js -->
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
+<!--
+     FILE ARCHIVED ON 10:18:57 Jun 30, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:17:22 Oct 07, 2024.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.643
+  exclusion.robots: 0.045
+  exclusion.robots.policy: 0.032
+  esindex: 0.012
+  cdx.remote: 10.662
+  LoadShardBlock: 146.296 (3)
+  PetaboxLoader3.datanode: 484.129 (4)
+  load_resource: 514.162
+  PetaboxLoader3.resolve: 101.525
+-->
