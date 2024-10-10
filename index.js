@@ -434,24 +434,149 @@ if (!self.__WB_pmw) {
     })
   })
 
+  // function sendEmail(form) {
+  //   var data = new FormData(form)
+
+  //   var isError = false
+
+  //   function checkTextField(key) {
+  //     var value = data.get(key)
+  //     var element = form.querySelector('[name="' + key + '"]')
+  //     var messageElement = form.querySelector(
+  //       '[name="' + key + '"] ~ label ~ span'
+  //     )
+  //     var isFieldError = value === ''
+  //     element.classList.toggle('es-popup__input_error', isFieldError)
+  //     messageElement &&
+  //       messageElement.classList.toggle(
+  //         'es-popup__input-message_show',
+  //         isFieldError
+  //       )
+  //     isError = isError || isFieldError
+  //   }
+
+  //   checkTextField('user-name')
+  //   checkTextField('company')
+  //   checkTextField('position')
+  //   checkTextField('message')
+
+  //   function checkCheckbox(key) {
+  //     var value = data.get(key)
+  //     var element = form.querySelector('[name="' + key + '"]')
+  //     var isFieldError = value !== 'on'
+  //     element.classList.toggle('es-popup__checkbox-input_error', isFieldError)
+  //     isError = isError || isFieldError
+  //   }
+
+  //   checkCheckbox('agreement')
+
+  //   function checkEmail(key) {
+  //     var value = data.get(key)
+  //     var element = form.querySelector('[name="' + key + '"]')
+  //     var messageElement = form.querySelector(
+  //       '[name="' + key + '"] ~ label ~ span'
+  //     )
+
+  //     var re =
+  //       /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+
+  //     var isFieldError = value === '' || !re.test(value)
+  //     element.classList.toggle('es-popup__input_error', isFieldError)
+  //     messageElement &&
+  //       messageElement.classList.toggle(
+  //         'es-popup__input-message_show',
+  //         isFieldError
+  //       )
+  //     isError = isError || isFieldError
+  //   }
+
+  //   checkEmail('email')
+
+  //   function checkPhone(key) {
+  //     var value = data.get(key)
+  //     var element = form.querySelector('[name="' + key + '"]')
+  //     var messageElement = form.querySelector(
+  //       '[name="' + key + '"] ~ label ~ span'
+  //     )
+
+  //     var re = /^(?:\+)?\d \(\d{3}\) \d{3}-\d{2}-\d{2}/
+
+  //     var isFieldError = value === '' || !re.test(value)
+  //     element.classList.toggle('es-popup__input_error', isFieldError)
+  //     messageElement &&
+  //       messageElement.classList.toggle(
+  //         'es-popup__input-message_show',
+  //         isFieldError
+  //       )
+  //     isError = isError || isFieldError
+  //   }
+
+  //   checkPhone('user-cellphone')
+
+  //   if (isError) {
+  //     return false
+  //   }
+
+  //   grecaptcha.ready(function () {
+  //     grecaptcha
+  //       .execute('6LdLRnoUAAAAADtEY6uckKKn04dqZDCNnpcwoseK', {
+  //         action: 'investors/mail'
+  //       })
+  //       .then(function (token) {
+  //         var messageElement = document.getElementById('popup-message')
+  //         messageElement.innerHTML = ''
+
+  //         var xmlHttp = new XMLHttpRequest()
+
+  //         xmlHttp.addEventListener('load', function (event) {
+  //           messageElement.classList.remove('es-popup__message_error')
+  //           messageElement.innerHTML = 'Ваше сообщение успешно отправленно!'
+
+  //           setTimeout(function () {
+  //             var investorPopup = document.getElementById('investors-popup')
+  //             investorPopup.classList.remove('es-popup_show')
+  //           }, 2000)
+  //         })
+
+  //         // Define what happens in case of error
+  //         xmlHttp.addEventListener('error', function (event) {
+  //           messageElement.classList.add('es-popup__message_error')
+  //           messageElement.innerHTML =
+  //             'К сожалению ваше сообщение не оптравленно. Попробуйте позже.'
+  //         })
+
+  //         data.append('g-recaptcha-response', token)
+
+  //         xmlHttp.open('POST', '/scripts/mail.php')
+  //         xmlHttp.send(data)
+  //       })
+  //   })
+
+  //   return false
+  // }
+
   function sendEmail(form) {
+    console.log('Начало отправки формы')
     var data = new FormData(form)
 
     var isError = false
 
+    // Проверка полей
     function checkTextField(key) {
       var value = data.get(key)
+      console.log(key + ': ' + value) // Логируем значения
       var element = form.querySelector('[name="' + key + '"]')
       var messageElement = form.querySelector(
         '[name="' + key + '"] ~ label ~ span'
       )
       var isFieldError = value === ''
       element.classList.toggle('es-popup__input_error', isFieldError)
-      messageElement &&
+      if (messageElement) {
         messageElement.classList.toggle(
           'es-popup__input-message_show',
           isFieldError
         )
+      }
       isError = isError || isFieldError
     }
 
@@ -460,6 +585,7 @@ if (!self.__WB_pmw) {
     checkTextField('position')
     checkTextField('message')
 
+    // Проверка чекбокса согласия
     function checkCheckbox(key) {
       var value = data.get(key)
       var element = form.querySelector('[name="' + key + '"]')
@@ -470,87 +596,81 @@ if (!self.__WB_pmw) {
 
     checkCheckbox('agreement')
 
+    // Проверка Email
     function checkEmail(key) {
       var value = data.get(key)
       var element = form.querySelector('[name="' + key + '"]')
       var messageElement = form.querySelector(
         '[name="' + key + '"] ~ label ~ span'
       )
-
       var re =
         /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
-
       var isFieldError = value === '' || !re.test(value)
       element.classList.toggle('es-popup__input_error', isFieldError)
-      messageElement &&
+      if (messageElement) {
         messageElement.classList.toggle(
           'es-popup__input-message_show',
           isFieldError
         )
+      }
       isError = isError || isFieldError
     }
 
     checkEmail('email')
 
+    // Проверка телефона
     function checkPhone(key) {
       var value = data.get(key)
       var element = form.querySelector('[name="' + key + '"]')
       var messageElement = form.querySelector(
         '[name="' + key + '"] ~ label ~ span'
       )
-
       var re = /^(?:\+)?\d \(\d{3}\) \d{3}-\d{2}-\d{2}/
-
       var isFieldError = value === '' || !re.test(value)
       element.classList.toggle('es-popup__input_error', isFieldError)
-      messageElement &&
+      if (messageElement) {
         messageElement.classList.toggle(
           'es-popup__input-message_show',
           isFieldError
         )
+      }
       isError = isError || isFieldError
     }
 
     checkPhone('user-cellphone')
 
     if (isError) {
+      console.log('Форма содержит ошибки.')
       return false
     }
 
-    grecaptcha.ready(function () {
-      grecaptcha
-        .execute('6LdLRnoUAAAAADtEY6uckKKn04dqZDCNnpcwoseK', {
-          action: 'investors/mail'
-        })
-        .then(function (token) {
-          var messageElement = document.getElementById('popup-message')
-          messageElement.innerHTML = ''
+    console.log('Форма проверена, отправляем данные.')
 
-          var xmlHttp = new XMLHttpRequest()
+    // AJAX запрос через XMLHttpRequest
+    var xmlHttp = new XMLHttpRequest()
 
-          xmlHttp.addEventListener('load', function (event) {
-            messageElement.classList.remove('es-popup__message_error')
-            messageElement.innerHTML = 'Ваше сообщение успешно отправленно!'
-
-            setTimeout(function () {
-              var investorPopup = document.getElementById('investors-popup')
-              investorPopup.classList.remove('es-popup_show')
-            }, 2000)
-          })
-
-          // Define what happens in case of error
-          xmlHttp.addEventListener('error', function (event) {
-            messageElement.classList.add('es-popup__message_error')
-            messageElement.innerHTML =
-              'К сожалению ваше сообщение не оптравленно. Попробуйте позже.'
-          })
-
-          data.append('g-recaptcha-response', token)
-
-          xmlHttp.open('POST', '/scripts/mail.php')
-          xmlHttp.send(data)
-        })
+    xmlHttp.addEventListener('load', function (event) {
+      console.log('Ответ от сервера получен: ', event.target.responseText)
+      var messageElement = document.getElementById('popup-message')
+      messageElement.classList.remove('es-popup__message_error')
+      messageElement.innerHTML = 'Ваше сообщение успешно отправлено!'
+      setTimeout(function () {
+        var investorPopup = document.getElementById('investors-popup')
+        investorPopup.classList.remove('es-popup_show')
+      }, 2000)
     })
+
+    xmlHttp.addEventListener('error', function (event) {
+      console.error('Ошибка при отправке формы: ', event)
+      var messageElement = document.getElementById('popup-message')
+      messageElement.classList.add('es-popup__message_error')
+      messageElement.innerHTML =
+        'К сожалению, ваше сообщение не отправлено. Попробуйте позже.'
+    })
+
+    console.log('Отправляем запрос на сервер.')
+    xmlHttp.open('POST', 'mail.php')
+    xmlHttp.send(data)
 
     return false
   }
