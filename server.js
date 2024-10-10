@@ -11,13 +11,6 @@ var transporter = nodemailer.createTransport({
   }
 })
 
-const mailOptions = {
-  from: 'InvestSibsteklo@yandex.ru',
-  to: 'dmitry.fedorovv@gmail.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-}
-
 const host = 'localhost'
 const port = 7000
 
@@ -29,38 +22,41 @@ function notFound(res) {
 
 const server = http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTION, POST')
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS, POST')
 
-  switch (req.method) {
-    case 'POST': {
-      switch (req.url) {
-        case '/sendEmail': {
-          res.statusCode = 200
-          res.setHeader('Content-Type', 'text/plain')
+  if (req.method === 'POST' && req.url === '/sendEmail') {
+    let body = ''
 
-          transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-              console.log(error)
-            } else {
-              console.log('Email sent: ' + info.response)
-            }
-          })
+    req.on('data', (chunk) => {
+      body += chunk.toString()
+    })
 
-          res.end('send mail success\n')
-          break
-        }
-        default: {
-          notFound(res)
-          break
-        }
+    req.on('end', () => {
+      const formData = new URLSearchParams(body)
+
+      const mailOptions = {
+        from: 'InvestSibsteklo@yandex.ru',
+        to: 'dmitry.fedorovv@gmail.com',
+        subject: `Сообщение от ${formData.get('user-name')}`,
+        text: `Имя: ${formData.get('user-name')}\nКомпания: ${formData.get(
+          'company'
+        )}\nСообщение: ${formData.get('message')}`
       }
 
-      break
-    }
-    default: {
-      notFound(res)
-      break
-    }
+      transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.log(error)
+          res.statusCode = 500
+          res.end('Ошибка при отправке письма\n')
+        } else {
+          console.log('Email sent: ' + info.response)
+          res.statusCode = 200
+          res.end('Письмо успешно отправлено\n')
+        }
+      })
+    })
+  } else {
+    notFound(res)
   }
 })
 
