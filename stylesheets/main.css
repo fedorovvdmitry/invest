@@ -116,6 +116,24 @@ ul {
   margin-bottom: 6rem;
 }
 
+.es-btn_investors-block1__btn {
+  display: block;
+  width: 40rem;
+  margin-bottom: 6rem;
+  text-decoration: none;
+  padding: 1.4rem 1.4rem 0.9rem;
+  border: none;
+  border-radius: 2rem;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  font-size: 2rem;
+  font-family: var(--font-trumpsoftpro-bold);
+  letter-spacing: var(--letter-spacing);
+  box-sizing: border-box;
+}
+
 .es-disabled {
   opacity: 0.8;
   pointer-events: none;
@@ -659,6 +677,11 @@ ul {
 .es-calc__content,
 .es-ivestors-block__content {
   padding: 6rem 2rem;
+}
+
+#calc-yield,
+#calc-profit {
+  cursor: default;
 }
 
 @media (max-width: 919px) {
