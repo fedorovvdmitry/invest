@@ -36,8 +36,8 @@ const server = http.createServer((req, res) => {
 
       const mailOptions = {
         from: 'InvestSibsteklo@yandex.ru',
-        to: 'primary@uscapital.ru',
-        cc: 'InvestSibsteklo@yandex.ru',
+        to: 'primary@uscapital.ru', // адресат
+        cc: 'InvestSibsteklo@yandex.ru', // копия
         replyTo: formData.get('email'),
         subject: `Новая заявка из формы на сайте для инвесторов | Сибстекло`,
         html: `
@@ -56,7 +56,7 @@ const server = http.createServer((req, res) => {
           )}">${formData.get('email')}</a></p>
           <p><strong>Сообщение:</strong></p>
           <p>${formData.get('message')}</p>
-          <hr>
+          <br><hr>
           <p style="text-align: center; color: #777;">Это автоматическое письмо. Пожалуйста, не отвечайте на него.</p>
         </div>
       </div>
