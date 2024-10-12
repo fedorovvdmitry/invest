@@ -88,6 +88,13 @@ if (!self.__WB_pmw) {
     //   })
     // }
 
+    // Основной скрипт
+    // Выбираем основной контейнер виджета
+    $('.widget-wrapp').newsWidget({
+      token: 'dc82e2fb6026b2aaf4beb938ad0e22f2' // Индивидуальный токен для подключения
+    })
+    // Токен привязывается к домену
+
     // phone inputs
     var phoneInputs = document.querySelectorAll('[data-role="phone/input"]')
 
@@ -148,20 +155,327 @@ if (!self.__WB_pmw) {
     })
 
     // calculator
-    var calcLightBtn = document.getElementById('calc-light-btn')
+    // var calcLightBtn = document.getElementById('calc-light-btn')
 
+    // if (calcLightBtn) {
+    //   var pdateElement = document.getElementById('calc-pdate')
+    //   var sdateElement = document.getElementById('calc-sdate')
+    //   var sizeElement = document.getElementById('calc-size')
+    //   var profitElement = document.getElementById('calc-profit')
+    //   var yieldElement = document.getElementById('calc-yield')
+    //   var inputsElement = document.getElementById('calc-inputs')
+
+    //   calcLightBtn.addEventListener('click', function () {
+    //     var pdate = parseDate(pdateElement.value)
+    //     var sdate = parseDate(sdateElement.value)
+    //     var size = parsePrice(sizeElement.value)
+
+    //     pdateElement.classList.toggle('es-input_error', !pdate)
+    //     sdateElement.classList.toggle('es-input_error', !sdate)
+    //     sizeElement.classList.toggle('es-input_error', size === '')
+
+    //     if (pdate && sdate && size !== '') {
+    //       profitElement.value = '...'
+    //       yieldElement.value = '...'
+    //       calcLightBtn.classList.add('es-disabled')
+    //       inputsElement.classList.add('es-disabled')
+
+    //       console.log(
+    //         `https://boomin.ru/api/calculate/min?token=${CALC_API_TOKEN}&pdate=${pdate}&sdate=${sdate}&size=${size}`
+    //       )
+
+    //       httpGetAsync(
+    //         `https://boomin.ru/api/calculate/min?token=${CALC_API_TOKEN}&pdate=${pdate}&sdate=${sdate}&size=${size}`,
+    //         function (response) {
+    //           const result = JSON.parse(response)
+    //           if (result.error == '200') {
+    //             // no error
+    //             profitElement.value = result.data.Pribl
+    //             yieldElement.value = result.data.DohProst
+    //           }
+    //         }
+    //       )
+    //       calcLightBtn.classList.remove('es-disabled')
+    //       inputsElement.classList.remove('es-disabled')
+    //     }
+    //   })
+    // }
+
+    // var calcBtn = document.getElementById('calc-btn')
+
+    // if (calcBtn) {
+    //   var pdateElement = document.getElementById('calc-pdate')
+    //   var sdateElement = document.getElementById('calc-sdate')
+    //   var volumeElement = document.getElementById('calc-volume')
+    //   var dutyElement = document.getElementById('calc-duty')
+    //   var ppriceElement = document.getElementById('calc-pprice')
+    //   var spriceElement = document.getElementById('calc-sprice')
+
+    //   var inputsElement = document.getElementById('calc-inputs')
+    //   var profitElement = document.getElementById('calc-profit')
+    //   var yieldElement = document.getElementById('calc-yield')
+    //   var dateSaleElement = document.getElementById('calc-date-sell')
+    //   var dateRedemptionElement = document.getElementById(
+    //     'calc-date-redemption'
+    //   )
+
+    //   var priceBuyClearElement = document.getElementById('calc-buy-price-clear')
+    //   var priceBuyClearPercentsElement = document.getElementById(
+    //     'calc-buy-price-clear-percents'
+    //   )
+    //   var priceBuyFullElement = document.getElementById('calc-buy-price-full')
+    //   var priceBuyFullPercentsElement = document.getElementById(
+    //     'calc-buy-price-full-percents'
+    //   )
+    //   var brokerBuyCommissionElement = document.getElementById(
+    //     'calc-buy-broker-commission'
+    //   )
+    //   var nkdBuyElement = document.getElementById('calc-buy-nkd')
+
+    //   var priceSellClearElement = document.getElementById(
+    //     'calc-sell-price-clear'
+    //   )
+    //   var priceSellClearPercentsElement = document.getElementById(
+    //     'calc-sell-price-clear-percents'
+    //   )
+    //   var priceSellFullElement = document.getElementById('calc-sell-price-full')
+    //   var priceSellFullPercentsElement = document.getElementById(
+    //     'calc-sell-price-full-percents'
+    //   )
+    //   var brokerSellCommissionElement = document.getElementById(
+    //     'calc-sell-broker-commission'
+    //   )
+    //   var nkdSellElement = document.getElementById('calc-sell-nkd')
+
+    //   var placementDateElement = document.getElementById('calc-placement-date')
+    //   var repaymentDateElement = document.getElementById('calc-repayment-date')
+    //   var currentRateElement = document.getElementById('calc-current-rate')
+    //   var nominalElement = document.getElementById('calc-nominal')
+    //   var couponPaymentElement = document.getElementById('calc-coupon-payment')
+
+    //   calcBtn.addEventListener('click', function () {
+    //     var pdate = parseDate(pdateElement.value)
+    //     var sdate = parseDate(sdateElement.value)
+    //     var volume = volumeElement.value
+    //     var duty = dutyElement.value
+    //     var pprice = parsePrice(ppriceElement.value)
+    //     var sprice = parsePrice(spriceElement.value)
+
+    //     pdateElement.classList.toggle('es-input_error', !pdate)
+    //     sdateElement.classList.toggle('es-input_error', !sdate)
+    //     volumeElement.classList.toggle('es-input_error', volume === '')
+    //     dutyElement.classList.toggle('es-input_error', duty === '')
+    //     ppriceElement.classList.toggle('es-input_error', pprice === '')
+    //     spriceElement.classList.toggle('es-input_error', sprice === '')
+
+    //     if (
+    //       pdate &&
+    //       sdate &&
+    //       volume !== '' &&
+    //       duty !== '' &&
+    //       pprice !== '' &&
+    //       sprice !== ''
+    //     ) {
+    //       profitElement.value = '...'
+    //       yieldElement.value = '...'
+    //       dateSaleElement.value = '...'
+    //       dateRedemptionElement.value = '...'
+
+    //       priceBuyClearElement.value = '...'
+    //       priceBuyClearPercentsElement.value = '...'
+    //       priceBuyFullElement.value = '...'
+    //       priceBuyFullPercentsElement.value = '...'
+    //       brokerBuyCommissionElement.value = '...'
+    //       nkdBuyElement.value = '...'
+
+    //       priceSellClearElement.value = '...'
+    //       priceSellClearPercentsElement.value = '...'
+    //       priceSellFullElement.value = '...'
+    //       priceSellFullPercentsElement.value = '...'
+    //       brokerSellCommissionElement.value = '...'
+    //       nkdSellElement.value = '...'
+
+    //       placementDateElement.value = '...'
+    //       repaymentDateElement.value = '...'
+    //       currentRateElement.value = '...'
+    //       nominalElement.value = '...'
+    //       couponPaymentElement.value = '...'
+
+    //       calcBtn.classList.add('es-disabled')
+    //       inputsElement.classList.add('es-disabled')
+
+    //       console.log(
+    //         `https://boomin.ru/api/calculate/full?token=${CALC_API_TOKEN_FULL}&duty=${duty}&pdate=${pdate}&pprice=${pprice}&sdate=${sdate}&sprice=${sprice}&volume=${volume}`
+    //       )
+
+    //       httpGetAsync(
+    //         `https://boomin.ru/api/calculate/full?token=${CALC_API_TOKEN_FULL}&duty=${duty}&pdate=${pdate}&pprice=${pprice}&sdate=${sdate}&sprice=${sprice}&volume=${volume}`,
+    //         function (response) {
+    //           const result = JSON.parse(response)
+    //           console.log(result)
+
+    //           calcBtn.classList.remove('es-disabled')
+    //           inputsElement.classList.remove('es-disabled')
+
+    //           if (result.error === '200') {
+    //             // no error
+    //             profitElement.value = result.data.Pribl
+    //             yieldElement.value = result.data.DohProst
+    //             dateSaleElement.value = result.data.dateSale
+    //             dateRedemptionElement.value = result.data.dateRedemption
+
+    //             priceBuyClearElement.value = result.data.clearPriceRubPok
+    //             priceBuyClearPercentsElement.value =
+    //               result.data.priceClearProcPok
+    //             priceBuyFullElement.value = result.data.fullPriceRubPok
+    //             priceBuyFullPercentsElement.value = result.data.fullPriceProcPok
+    //             brokerBuyCommissionElement.value =
+    //               result.data.brokerCommissionPok
+    //             nkdBuyElement.value = result.data.nkdPok
+
+    //             priceSellClearElement.value = result.data.clearPriceRubPr
+    //             priceSellClearPercentsElement.value =
+    //               result.data.priceClearProcPr
+    //             priceSellFullElement.value = result.data.fullPriceRubPr
+    //             priceSellFullPercentsElement.value = result.data.fullPriceProcPr
+    //             brokerSellCommissionElement.value =
+    //               result.data.brokerCommissionPr
+    //             nkdSellElement.value = result.data.nkdPr
+
+    //             placementDateElement.value = result.data.placementDate
+    //             repaymentDateElement.value = result.data.datePog
+    //             currentRateElement.value = result.data.currentRate
+    //             nominalElement.value = result.data.nominal
+    //             couponPaymentElement.value = result.data.payment
+    //           }
+    //         }
+    //       )
+    //     }
+    //   })
+    // }
+
+    // function parsePrice(priceStr) {
+    //   return priceStr.replace(/\s/g, '')
+    // }
+
+    // function parseDate(dateStr) {
+    //   var parsed = dateStr.split('.')
+    //   var result = []
+
+    //   if (parsed.length !== 3) {
+    //     return
+    //   }
+
+    //   for (let index = 0; index < 3; index++) {
+    //     const num = +parsed[index]
+
+    //     if (isNaN(num)) {
+    //       return
+    //     }
+
+    //     result.push(num >= 10 ? num : `0${num}`)
+    //   }
+
+    //   return `${result[2]}-${result[1]}-${result[0]}`
+    // }
+
+    // function httpGetAsync(theUrl, callback) {
+    //   var xmlHttp = new XMLHttpRequest()
+    //   xmlHttp.onreadystatechange = function () {
+    //     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+    //       callback(xmlHttp.responseText)
+    //     }
+    //   }
+    //   xmlHttp.open('GET', theUrl, true)
+    //   xmlHttp.send(null)
+    // }
+
+    // Объект с параметрами для каждого выпуска
+    const issueDetails = {
+      0: {
+        minDate: '2020-09-23',
+        maxDate: '2025-09-09',
+        token: '32e854f861f6e04e7414a54212c1a52a'
+      },
+      1: {
+        minDate: '2022-10-28',
+        maxDate: '2025-10-12',
+        token: 'ea267c74fc5322d3bb454e0fea2babe5'
+      },
+      2: {
+        minDate: '2023-10-19',
+        maxDate: '2027-09-28',
+        token: 'f38a8c20db4bae6d3d67666093f8ea81'
+      }
+    }
+
+    const issueSelect = document.getElementById('issue_select')
+    const pdateElement = document.getElementById('calc-pdate')
+    const sdateElement = document.getElementById('calc-sdate')
+    const sizeElement = document.getElementById('calc-size')
+    const profitElement = document.getElementById('calc-profit')
+    const yieldElement = document.getElementById('calc-yield')
+    const inputsElement = document.getElementById('calc-inputs')
+    const calcLightBtn = document.getElementById('calc-light-btn')
+
+    // Функция для инициализации Datepicker
+    function initializeDatepickers(minDate, maxDate) {
+      $(pdateElement).datepicker({
+        dateFormat: 'dd.mm.yy',
+        minDate:
+          new Date(minDate) > new Date() ? new Date(minDate) : new Date(), // Минимальная дата - сегодняшняя дата или дата выпуска
+        maxDate: new Date(maxDate),
+        onSelect: function (dateText) {
+          pdateElement.value = dateText
+
+          // Обновляем минимальную дату для календаря даты продажи
+          $(sdateElement).datepicker('option', 'minDate', new Date(dateText))
+        }
+      })
+
+      $(sdateElement).datepicker({
+        dateFormat: 'dd.mm.yy',
+        minDate:
+          new Date(minDate) > new Date() ? new Date(minDate) : new Date(),
+        maxDate: new Date(maxDate),
+        defaultDate: new Date(maxDate), // Устанавливаем дату по умолчанию на максимальную (дату погашения)
+        onSelect: function (dateText) {
+          sdateElement.value = dateText
+        }
+      })
+    }
+
+    function updateDateLimits() {
+      const selectedIssue = issueSelect.value
+      const { minDate, maxDate } = issueDetails[selectedIssue]
+
+      // Удаляем существующие Datepicker, если они есть
+      $(pdateElement).datepicker('destroy')
+      $(sdateElement).datepicker('destroy')
+
+      // Сбрасываем значения полей ввода
+      pdateElement.value = ''
+      sdateElement.value = ''
+      sizeElement.value = ''
+      profitElement.value = ''
+      yieldElement.value = ''
+
+      // Инициализируем Datepicker с новыми ограничениями
+      initializeDatepickers(minDate, maxDate)
+    }
+
+    // Добавляем обработчик для изменения выбора выпуска
+    issueSelect.addEventListener('change', updateDateLimits)
+
+    // Обработчик для кнопки "Рассчитать"
     if (calcLightBtn) {
-      var pdateElement = document.getElementById('calc-pdate')
-      var sdateElement = document.getElementById('calc-sdate')
-      var sizeElement = document.getElementById('calc-size')
-      var profitElement = document.getElementById('calc-profit')
-      var yieldElement = document.getElementById('calc-yield')
-      var inputsElement = document.getElementById('calc-inputs')
-
       calcLightBtn.addEventListener('click', function () {
-        var pdate = parseDate(pdateElement.value)
-        var sdate = parseDate(sdateElement.value)
-        var size = parsePrice(sizeElement.value)
+        const selectedIssue = issueSelect.value
+        const { token } = issueDetails[selectedIssue]
+
+        const pdate = parseDateToServerFormat(pdateElement.value)
+        const sdate = parseDateToServerFormat(sdateElement.value)
+        const size = parsePrice(sizeElement.value)
 
         pdateElement.classList.toggle('es-input_error', !pdate)
         sdateElement.classList.toggle('es-input_error', !sdate)
@@ -173,176 +487,20 @@ if (!self.__WB_pmw) {
           calcLightBtn.classList.add('es-disabled')
           inputsElement.classList.add('es-disabled')
 
-          console.log(
-            `https://boomin.ru/api/calculate/min?token=${CALC_API_TOKEN}&pdate=${pdate}&sdate=${sdate}&size=${size}`
-          )
+          // Формирование URL для GET-запроса
+          const apiUrl = `https://api.uscapital.ru/calculate/min?token=${token}&pdate=${pdate}&sdate=${sdate}&size=${size}`
 
-          httpGetAsync(
-            `https://boomin.ru/api/calculate/min?token=${CALC_API_TOKEN}&pdate=${pdate}&sdate=${sdate}&size=${size}`,
-            function (response) {
-              const result = JSON.parse(response)
-              if (result.error == '200') {
-                // no error
-                profitElement.value = result.data.Pribl
-                yieldElement.value = result.data.DohProst
-              }
+          httpGetAsync(apiUrl, function (response) {
+            const result = JSON.parse(response)
+            if (result.error == '200') {
+              // no error
+              profitElement.value = result.data.Pribl
+              yieldElement.value = result.data.DohProst
             }
-          )
+          })
+
           calcLightBtn.classList.remove('es-disabled')
           inputsElement.classList.remove('es-disabled')
-        }
-      })
-    }
-
-    var calcBtn = document.getElementById('calc-btn')
-
-    if (calcBtn) {
-      var pdateElement = document.getElementById('calc-pdate')
-      var sdateElement = document.getElementById('calc-sdate')
-      var volumeElement = document.getElementById('calc-volume')
-      var dutyElement = document.getElementById('calc-duty')
-      var ppriceElement = document.getElementById('calc-pprice')
-      var spriceElement = document.getElementById('calc-sprice')
-
-      var inputsElement = document.getElementById('calc-inputs')
-      var profitElement = document.getElementById('calc-profit')
-      var yieldElement = document.getElementById('calc-yield')
-      var dateSaleElement = document.getElementById('calc-date-sell')
-      var dateRedemptionElement = document.getElementById(
-        'calc-date-redemption'
-      )
-
-      var priceBuyClearElement = document.getElementById('calc-buy-price-clear')
-      var priceBuyClearPercentsElement = document.getElementById(
-        'calc-buy-price-clear-percents'
-      )
-      var priceBuyFullElement = document.getElementById('calc-buy-price-full')
-      var priceBuyFullPercentsElement = document.getElementById(
-        'calc-buy-price-full-percents'
-      )
-      var brokerBuyCommissionElement = document.getElementById(
-        'calc-buy-broker-commission'
-      )
-      var nkdBuyElement = document.getElementById('calc-buy-nkd')
-
-      var priceSellClearElement = document.getElementById(
-        'calc-sell-price-clear'
-      )
-      var priceSellClearPercentsElement = document.getElementById(
-        'calc-sell-price-clear-percents'
-      )
-      var priceSellFullElement = document.getElementById('calc-sell-price-full')
-      var priceSellFullPercentsElement = document.getElementById(
-        'calc-sell-price-full-percents'
-      )
-      var brokerSellCommissionElement = document.getElementById(
-        'calc-sell-broker-commission'
-      )
-      var nkdSellElement = document.getElementById('calc-sell-nkd')
-
-      var placementDateElement = document.getElementById('calc-placement-date')
-      var repaymentDateElement = document.getElementById('calc-repayment-date')
-      var currentRateElement = document.getElementById('calc-current-rate')
-      var nominalElement = document.getElementById('calc-nominal')
-      var couponPaymentElement = document.getElementById('calc-coupon-payment')
-
-      calcBtn.addEventListener('click', function () {
-        var pdate = parseDate(pdateElement.value)
-        var sdate = parseDate(sdateElement.value)
-        var volume = volumeElement.value
-        var duty = dutyElement.value
-        var pprice = parsePrice(ppriceElement.value)
-        var sprice = parsePrice(spriceElement.value)
-
-        pdateElement.classList.toggle('es-input_error', !pdate)
-        sdateElement.classList.toggle('es-input_error', !sdate)
-        volumeElement.classList.toggle('es-input_error', volume === '')
-        dutyElement.classList.toggle('es-input_error', duty === '')
-        ppriceElement.classList.toggle('es-input_error', pprice === '')
-        spriceElement.classList.toggle('es-input_error', sprice === '')
-
-        if (
-          pdate &&
-          sdate &&
-          volume !== '' &&
-          duty !== '' &&
-          pprice !== '' &&
-          sprice !== ''
-        ) {
-          profitElement.value = '...'
-          yieldElement.value = '...'
-          dateSaleElement.value = '...'
-          dateRedemptionElement.value = '...'
-
-          priceBuyClearElement.value = '...'
-          priceBuyClearPercentsElement.value = '...'
-          priceBuyFullElement.value = '...'
-          priceBuyFullPercentsElement.value = '...'
-          brokerBuyCommissionElement.value = '...'
-          nkdBuyElement.value = '...'
-
-          priceSellClearElement.value = '...'
-          priceSellClearPercentsElement.value = '...'
-          priceSellFullElement.value = '...'
-          priceSellFullPercentsElement.value = '...'
-          brokerSellCommissionElement.value = '...'
-          nkdSellElement.value = '...'
-
-          placementDateElement.value = '...'
-          repaymentDateElement.value = '...'
-          currentRateElement.value = '...'
-          nominalElement.value = '...'
-          couponPaymentElement.value = '...'
-
-          calcBtn.classList.add('es-disabled')
-          inputsElement.classList.add('es-disabled')
-
-          console.log(
-            `https://boomin.ru/api/calculate/full?token=${CALC_API_TOKEN_FULL}&duty=${duty}&pdate=${pdate}&pprice=${pprice}&sdate=${sdate}&sprice=${sprice}&volume=${volume}`
-          )
-
-          httpGetAsync(
-            `https://boomin.ru/api/calculate/full?token=${CALC_API_TOKEN_FULL}&duty=${duty}&pdate=${pdate}&pprice=${pprice}&sdate=${sdate}&sprice=${sprice}&volume=${volume}`,
-            function (response) {
-              const result = JSON.parse(response)
-              console.log(result)
-
-              calcBtn.classList.remove('es-disabled')
-              inputsElement.classList.remove('es-disabled')
-
-              if (result.error === '200') {
-                // no error
-                profitElement.value = result.data.Pribl
-                yieldElement.value = result.data.DohProst
-                dateSaleElement.value = result.data.dateSale
-                dateRedemptionElement.value = result.data.dateRedemption
-
-                priceBuyClearElement.value = result.data.clearPriceRubPok
-                priceBuyClearPercentsElement.value =
-                  result.data.priceClearProcPok
-                priceBuyFullElement.value = result.data.fullPriceRubPok
-                priceBuyFullPercentsElement.value = result.data.fullPriceProcPok
-                brokerBuyCommissionElement.value =
-                  result.data.brokerCommissionPok
-                nkdBuyElement.value = result.data.nkdPok
-
-                priceSellClearElement.value = result.data.clearPriceRubPr
-                priceSellClearPercentsElement.value =
-                  result.data.priceClearProcPr
-                priceSellFullElement.value = result.data.fullPriceRubPr
-                priceSellFullPercentsElement.value = result.data.fullPriceProcPr
-                brokerSellCommissionElement.value =
-                  result.data.brokerCommissionPr
-                nkdSellElement.value = result.data.nkdPr
-
-                placementDateElement.value = result.data.placementDate
-                repaymentDateElement.value = result.data.datePog
-                currentRateElement.value = result.data.currentRate
-                nominalElement.value = result.data.nominal
-                couponPaymentElement.value = result.data.payment
-              }
-            }
-          )
         }
       })
     }
@@ -351,27 +509,16 @@ if (!self.__WB_pmw) {
       return priceStr.replace(/\s/g, '')
     }
 
-    function parseDate(dateStr) {
-      var parsed = dateStr.split('.')
-      var result = []
-
-      if (parsed.length !== 3) {
-        return
+    // Преобразование даты в формат 'YYYY-MM-DD'
+    function parseDateToServerFormat(dateStr) {
+      const parsed = dateStr.split('.')
+      if (parsed.length === 3) {
+        return `${parsed[2]}-${parsed[1]}-${parsed[0]}`
       }
-
-      for (let index = 0; index < 3; index++) {
-        const num = +parsed[index]
-
-        if (isNaN(num)) {
-          return
-        }
-
-        result.push(num >= 10 ? num : `0${num}`)
-      }
-
-      return `${result[2]}-${result[1]}-${result[0]}`
+      return ''
     }
 
+    // Функция для асинхронного GET-запроса
     function httpGetAsync(theUrl, callback) {
       var xmlHttp = new XMLHttpRequest()
       xmlHttp.onreadystatechange = function () {
@@ -382,6 +529,9 @@ if (!self.__WB_pmw) {
       xmlHttp.open('GET', theUrl, true)
       xmlHttp.send(null)
     }
+
+    // Инициализация значений при загрузке страницы
+    updateDateLimits()
 
     // window.onorientationchange = function() {
     //   var page = document.querySelector('.es-page');
@@ -561,6 +711,7 @@ if (!self.__WB_pmw) {
   function sendEmail(form) {
     console.log('Начало отправки формы')
     var data = new FormData(form)
+    var urlEncodedData = new URLSearchParams(data).toString() // Преобразуем FormData в строку
 
     var isError = false
 
@@ -672,8 +823,20 @@ if (!self.__WB_pmw) {
     })
 
     console.log('Отправляем запрос на сервер.')
+
+    // Преобразуем данные из формы в URL-кодированную строку
+    var data = new FormData(form)
+    var urlEncodedData = new URLSearchParams(data).toString()
+
+    // Настраиваем запрос
     xmlHttp.open('POST', 'http://localhost:7000/sendEmail')
-    xmlHttp.send(data)
+    xmlHttp.setRequestHeader(
+      'Content-Type',
+      'application/x-www-form-urlencoded'
+    )
+
+    // Отправляем данные
+    xmlHttp.send(urlEncodedData)
 
     return false
   }
