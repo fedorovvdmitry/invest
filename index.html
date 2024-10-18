@@ -1293,14 +1293,6 @@
           </button>
         </div>
       </section>
-      <script>
-        $(document).ready(function () {
-          $('.widget-wrapp').newsWidget({
-            token: 'dc82e2fb6026b2aaf4beb938ad0e22f2',
-            debug: false
-          })
-        })
-      </script>
     </div>
     <footer class="es-footer" id="contacts">
       <div class="es-page__content es-footer__content">
@@ -1501,7 +1493,12 @@
     <script src="widget.js"></script>
     <!-- theme js -->
     <script type="text/javascript" src="index.js"></script>
-
     <script src="https://storage.boomin.ru/local/news-widget.min.js"></script>
+    <script>
+      $('.widget-wrapp').newsWidget({
+        token: 'dc82e2fb6026b2aaf4beb938ad0e22f2',
+        debug: false
+      })
+    </script>
   </body>
 </html>
