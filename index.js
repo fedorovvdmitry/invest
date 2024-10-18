@@ -88,13 +88,6 @@ if (!self.__WB_pmw) {
     //   })
     // }
 
-    // Основной скрипт
-    // Выбираем основной контейнер виджета
-    $('.widget-wrapp').newsWidget({
-      token: 'dc82e2fb6026b2aaf4beb938ad0e22f2' // Индивидуальный токен для подключения
-    })
-    // Токен привязывается к домену
-
     // phone inputs
     var phoneInputs = document.querySelectorAll('[data-role="phone/input"]')
 

@@ -1796,6 +1796,14 @@ input[value=''] ~ .es-popup__input-label {
   font-size: var(--font-sm);
 }
 
+.block__title-link {
+  text-decoration: none;
+  font-family: var(--font-unineue-bold);
+  font-size: var(--font-sm);
+  color: var(--gray-dark);
+  font-size: var(--font-md);
+}
+
 @media (max-width: 919px),
   (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 500px) {
   .es-news-block__container {
