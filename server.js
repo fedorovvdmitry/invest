@@ -11,8 +11,8 @@ var transporter = nodemailer.createTransport({
   }
 })
 
-const host = 'localhost'
-const port = 7000
+const host = '0.0.0.0'
+const port = 443
 
 function notFound(res) {
   res.statusCode = 404

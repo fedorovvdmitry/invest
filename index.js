@@ -822,7 +822,7 @@ if (!self.__WB_pmw) {
     var urlEncodedData = new URLSearchParams(data).toString()
 
     // Настраиваем запрос
-    xmlHttp.open('POST', 'http://localhost:7000/sendEmail')
+    xmlHttp.open('POST', 'https://invest.sibstek.ru/sendEmail')
     xmlHttp.setRequestHeader(
       'Content-Type',
       'application/x-www-form-urlencoded'
