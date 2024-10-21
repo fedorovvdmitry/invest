@@ -1215,7 +1215,7 @@
         </div>
       </section>
       <section class="es-ivestors-block2" id="press-centr">
-        <div class="es-page__content es-news__content widget-wrapp typ_none">
+        <!-- <div class="es-page__content es-news__content widget-wrapp typ_none">
           <p class="es-header es-header_blue">Пресс-центр</p>
           <div class="es-news-block__container widget-news_block">
             <div class="es-news-tile widget-news_item widget-news_item_img">
@@ -1282,15 +1282,81 @@
               </div>
             </div>
           </div>
-          <!-- <a
-            class="es-btn es-btn_investors-block1__btn"
+          <a
+            class="es-btn es-btn_short"
             href="https://boomin.ru/publications/tag/sibsteklo"
             target="_blank"
             >Все новости</a
-          > -->
+          >
           <button class="es-btn es-btn_short widget-news_btn">
             Все новости
           </button>
+        </div> -->
+        <?php
+        // URL страницы, откуда парсим
+        $url = 'https://boomin.ru/publications/tag/sibsteklo';
+
+        // Получаем HTML контент страницы
+        $html = file_get_contents($url);
+
+        // Создаем объект DOMDocument для парсинга HTML
+        $dom = new DOMDocument();
+        libxml_use_internal_errors(true); // подавляем ошибки из-за некорректного HTML
+        $dom->loadHTML($html);
+        libxml_clear_errors();
+
+        // Создаем XPath для поиска элементов
+        $xpath = new DOMXPath($dom);
+
+        // Ищем карточки новостей
+        $newsItems = $xpath->query('//div[contains(@class, "publication-card__wrap")]');
+
+        // Инициализируем счетчик новостей
+        $newsCount = 0;
+        $maxNews = 3; // выводим только 3 новости
+        ?>
+
+        <div class="es-page__content es-news__content widget-wrapp typ_none">
+            <p class="es-header es-header_blue">Пресс-центр</p>
+            <div class="es-news-block__container widget-news_block">
+                <?php foreach ($newsItems as $item): ?>
+                    <?php
+                    // Проверяем, если уже выведено 3 новости, прерываем цикл
+                    if ($newsCount >= $maxNews) break;
+
+                    // Получаем ссылку на новость
+                    $linkNode = $xpath->query('.//a[contains(@class, "publication-card__title")]', $item);
+                    $link = $linkNode->length > 0 ? 'https://boomin.ru' . $linkNode->item(0)->getAttribute('href') : '#';
+
+                    // Получаем картинку
+                    $imgNode = $xpath->query('.//img[contains(@class, "publication-card__img")]', $item);
+                    $img = $imgNode->length > 0 ? $imgNode->item(0)->getAttribute('src') : '';
+
+                    // Получаем заголовок
+                    $titleNode = $xpath->query('.//a[contains(@class, "publication-card__title")]', $item);
+                    $title = $titleNode->length > 0 ? trim($titleNode->item(0)->textContent) : 'Без заголовка';
+
+                    // Получаем анонс текста
+                    $previewNode = $xpath->query('.//div[contains(@class, "publication-card__text")]', $item);
+                    $preview = $previewNode->length > 0 ? trim($previewNode->item(0)->textContent) : 'Без описания';
+                    ?>
+                    <div class="es-news-tile widget-news_item widget-news_item_img">
+                        <a href="<?php echo $link; ?>" target="_blank" class="block__img-link">
+                            <img src="<?php echo $img; ?>" alt="Изображение новости" />
+                        </a>
+                        <div class="es-news-tile__title widget-news_item_title">
+                            <a href="<?php echo $link; ?>" target="_blank" class="block__title-link">
+                                <?php echo $title; ?>
+                            </a>
+                        </div>
+                        <div class="es-news-tile__text widget-news_item_preview">
+                            <div class="block__text"><?php echo $preview; ?></div>
+                        </div>
+                    </div>
+                    <?php $newsCount++; // Увеличиваем счетчик новостей ?>
+                <?php endforeach; ?>
+            </div>
+            <a class="es-btn es-btn_short" href="https://boomin.ru/publications/tag/sibsteklo" target="_blank">Все новости</a>
         </div>
       </section>
     </div>
@@ -1493,12 +1559,12 @@
     <script src="widget.js"></script>
     <!-- theme js -->
     <script type="text/javascript" src="index.js"></script>
-    <script src="https://storage.boomin.ru/local/news-widget.min.js"></script>
+    <!-- <script src="https://storage.boomin.ru/local/news-widget.min.js"></script>
     <script>
       $('.widget-wrapp').newsWidget({
         token: 'dc82e2fb6026b2aaf4beb938ad0e22f2',
         debug: false
       })
-    </script>
+    </script> -->
   </body>
 </html>
