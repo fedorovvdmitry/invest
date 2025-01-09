@@ -725,7 +725,7 @@
           </div>
         </div>
       </section>
-      <!-- <section class="es-ivestors-block2" id="profitability">
+      <section class="es-ivestors-block2" id="profitability">
         <div class="es-page__content es-calc__content">
           <p class="es-header es-header_blue">Инвестиционный калькулятор</p>
           <div class="es-calc__container">
@@ -738,12 +738,12 @@
             <div id="calc-inputs">
               <div class="es-input-block">
                 <label class="es-input-block__title">Номер выпуска</label>
-                <input
+                <!-- <input
                   class="es-input es-input_blue"
                   tabindex="1"
                   readonly
                   value="4B02-02-00373-R-001P от 23.09.2020 ISIN код:RU000A1026R9"
-                />
+                /> -->
                 <select class="es-input es-input_blue" id="issue_select">
                   <option value="0">
                     4B02-02-00373-R-001P от 23.09.2020 ISIN код:RU000A1026R9
@@ -815,7 +815,7 @@
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
       <section class="es-ivestors-block4" id="basic-information">
         <div class="es-tabs es-tabs_border">
           <div class="es-tabs__menu-container">
@@ -1301,63 +1301,63 @@
         // Создаем объект DOMDocument для парсинга HTML
         $dom = new DOMDocument();
         libxml_use_internal_errors(true); // подавляем ошибки из-за некорректного HTML
-        $dom->loadHTML($html); libxml_clear_errors(); // Создаем XPath для
-        поиска элементов $xpath = new DOMXPath($dom); // Ищем карточки новостей
-        $newsItems = $xpath->query('//div[contains(@class,
-        "publication-card__wrap")]'); // Инициализируем счетчик новостей
-        $newsCount = 0; $maxNews = 3; // выводим только 3 новости ?>
+        $dom->loadHTML($html);
+        libxml_clear_errors();
+
+        // Создаем XPath для поиска элементов
+        $xpath = new DOMXPath($dom);
+
+        // Ищем карточки новостей
+        $newsItems = $xpath->query('//div[contains(@class, "publication-card__wrap")]');
+
+        // Инициализируем счетчик новостей
+        $newsCount = 0;
+        $maxNews = 3; // выводим только 3 новости
+        ?>
 
         <div class="es-page__content es-news__content widget-wrapp typ_none">
-          <p class="es-header es-header_blue">Пресс-центр</p>
-          <div class="es-news-block__container widget-news_block">
-            <?php foreach ($newsItems as $item): ?>
-            <?php
+            <p class="es-header es-header_blue">Пресс-центр</p>
+            <div class="es-news-block__container widget-news_block">
+                <?php foreach ($newsItems as $item): ?>
+                    <?php
                     // Проверяем, если уже выведено 3 новости, прерываем цикл
-                    if ($newsCount >= $maxNews) break; // Получаем ссылку на
-            новость $linkNode = $xpath->query('.//a[contains(@class,
-            "publication-card__title")]', $item); $link = $linkNode->length > 0
-            ? 'https://boomin.ru' . $linkNode->item(0)->getAttribute('href') :
-            '#'; // Получаем картинку $imgNode =
-            $xpath->query('.//img[contains(@class, "publication-card__img")]',
-            $item); $img = $imgNode->length > 0 ?
-            $imgNode->item(0)->getAttribute('src') : ''; // Получаем заголовок
-            $titleNode = $xpath->query('.//a[contains(@class,
-            "publication-card__title")]', $item); $title = $titleNode->length >
-            0 ? trim($titleNode->item(0)->textContent) : 'Без заголовка'; //
-            Получаем анонс текста $previewNode =
-            $xpath->query('.//div[contains(@class, "publication-card__text")]',
-            $item); $preview = $previewNode->length > 0 ?
-            trim($previewNode->item(0)->textContent) : 'Без описания'; ?>
-            <div class="es-news-tile widget-news_item widget-news_item_img">
-              <a
-                href="<?php echo $link; ?>"
-                target="_blank"
-                class="block__img-link"
-              >
-                <img src="<?php echo $img; ?>" alt="Изображение новости" />
-              </a>
-              <div class="es-news-tile__title widget-news_item_title">
-                <a
-                  href="<?php echo $link; ?>"
-                  target="_blank"
-                  class="block__title-link"
-                >
-                  <?php echo $title; ?>
-                </a>
-              </div>
-              <div class="es-news-tile__text widget-news_item_preview">
-                <div class="block__text"><?php echo $preview; ?></div>
-              </div>
+                    if ($newsCount >= $maxNews) break;
+
+                    // Получаем ссылку на новость
+                    $linkNode = $xpath->query('.//a[contains(@class, "publication-card__title")]', $item);
+                    $link = $linkNode->length > 0 ? 'https://boomin.ru' . $linkNode->item(0)->getAttribute('href') : '#';
+
+                    // Получаем картинку
+                    $imgNode = $xpath->query('.//img[contains(@class, "publication-card__img")]', $item);
+                    $img = $imgNode->length > 0 ? $imgNode->item(0)->getAttribute('src') : '';
+
+                    // Получаем заголовок
+                    $titleNode = $xpath->query('.//a[contains(@class, "publication-card__title")]', $item);
+                    $title = $titleNode->length > 0 ? trim($titleNode->item(0)->textContent) : 'Без заголовка';
+
+                    // Получаем анонс текста
+                    $previewNode = $xpath->query('.//div[contains(@class, "publication-card__text")]', $item);
+                    $preview = $previewNode->length > 0 ? trim($previewNode->item(0)->textContent) : 'Без описания';
+                    ?>
+                    <div class="es-news-tile widget-news_item widget-news_item_img">
+                    <?php if ($img): // Проверяем, есть ли изображение ?>
+                      <a href="<?php echo $link; ?>" target="_blank" class="block__img-link">
+                          <img src="<?php echo $img; ?>" alt="Изображение новости" />
+                      </a>
+                    <?php endif; ?>
+                    <div class="es-news-tile__title widget-news_item_title">
+                        <a href="<?php echo $link; ?>" target="_blank" class="block__title-link">
+                            <?php echo $title; ?>
+                        </a>
+                    </div>
+                    <div class="es-news-tile__text widget-news_item_preview">
+                        <div class="block__text"><?php echo $preview; ?></div>
+                    </div>
+                </div>
+                <?php $newsCount++; // Увеличиваем счетчик новостей ?>
+                <?php endforeach; ?>
             </div>
-            <?php $newsCount++; // Увеличиваем счетчик новостей ?>
-            <?php endforeach; ?>
-          </div>
-          <a
-            class="es-btn es-btn_short"
-            href="https://boomin.ru/publications/tag/sibsteklo"
-            target="_blank"
-            >Все новости</a
-          >
+            <a class="es-btn es-btn_short" href="https://boomin.ru/publications/tag/sibsteklo" target="_blank">Все новости</a>
         </div>
       </section>
     </div>
